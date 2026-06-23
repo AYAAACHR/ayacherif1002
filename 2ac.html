@@ -2,31 +2,113 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <h1>Cours de 2ème année collège</h1>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours 2ème année collège</title>
 
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f7fb;
             color: #222;
-            padding: 30px;
+            line-height: 1.6;
         }
 
-        h1 {
+        header {
+            background: linear-gradient(135deg, #0f4c81, #1abc9c);
+            color: white;
+            padding: 45px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 17px;
+        }
+
+        nav {
+            background-color: #083b66;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #1abc9c;
+        }
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 45px 20px;
+        }
+
+        h2 {
             color: #0f4c81;
+            margin-bottom: 20px;
+            border-left: 5px solid #1abc9c;
+            padding-left: 10px;
+            font-size: 28px;
         }
 
-        .cours {
-            background: white;
-            padding: 20px;
-            margin: 15px 0;
-            border-radius: 10px;
+        .intro {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
         }
 
-        a {
+        .cours-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .cours-card {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .cours-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .cours-card h3 {
+            color: #0f4c81;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .cours-card p {
+            font-size: 15px;
+            color: #444;
+        }
+
+        .btn {
             display: inline-block;
-            margin-top: 20px;
+            margin-top: 15px;
             background-color: #1abc9c;
             color: white;
             padding: 10px 16px;
@@ -34,29 +116,167 @@
             text-decoration: none;
             font-weight: bold;
         }
+
+        .btn:hover {
+            background-color: #14977d;
+        }
+
+        footer {
+            background-color: #083b66;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
     </style>
 </head>
 
 <body>
 
-    <h1>Cours de 2ème année collège</h1>
+    <header>
+        <h1>Cours de 2ème année collège</h1>
+        <p>Physique-Chimie | Cours, résumés, exercices, corrigés et documents PDF</p>
+    </header>
 
-    <div class="cours">
-        <h2>L’eau dans la nature</h2>
-        <p>Résumé, cours et exercices.</p>
-    </div>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="#semestre1">Semestre 1</a>
+        <a href="#semestre2">Semestre 2</a>
+    </nav>
 
-    <div class="cours">
-        <h2>L’air qui nous entoure</h2>
-        <p>Résumé, cours et exercices.</p>
-    </div>
+    <section id="semestre1">
+        <h2>Semestre 1</h2>
 
-    <div class="cours">
-        <h2>L’électricité</h2>
-        <p>Résumé, cours et exercices.</p>
-    </div>
+        <div class="intro">
+            <p>
+                Cette section regroupe les cours du semestre 1 de la 2ème année collège.
+                Elle traite principalement de l’air, de ses constituants, des atomes,
+                des molécules, des combustions, des réactions chimiques, des substances
+                naturelles et synthétiques ainsi que de la pollution de l’air.
+            </p>
+        </div>
 
-    <a href="index.html">Retour à l’accueil</a>
+        <div class="cours-grid">
+
+            <div class="cours-card">
+                <h3>L’air qui nous entoure</h3>
+                <p>Découvrir l’existence de l’air et son importance dans notre environnement.</p>
+                <a href="2ac-s1-air-qui-nous-entoure.html" class="btn">Ouvrir le cours</a>
+            </div>
+
+            <div class="cours-card">
+                <h3>Quelques propriétés de l’air et ses constituants</h3>
+                <p>Étudier les propriétés de l’air et identifier ses principaux constituants.</p>
+                <a href="2ac-s1-proprietes-air-constituants.html" class="btn">Ouvrir le cours</a>
+            </div>
+
+            <div class="cours-card">
+                <h3>Les molécules et les atomes</h3>
+                <p>Comprendre que la matière est constituée d’atomes et de molécules.</p>
+                <a href="2ac-s1-molecules-atomes.html" class="btn">Ouvrir le cours</a>
+            </div>
+
+            <div class="cours-card">
+                <h3>Les combustions</h3>
+                <p>Découvrir les conditions nécessaires à une combustion et ses dangers.</p>
+                <a href="2ac-s1-combustions.html" class="btn">Ouvrir le cours</a>
+            </div>
+
+            <div class="cours-card">
+                <h3>Les réactions chimiques</h3>
+                <p>Comprendre la transformation chimique et distinguer réactifs et produits.</p>
+                <a href="2ac-s1-reactions-chimiques.html" class="btn">Ouvrir le cours</a>
+            </div>
+
+            <div class="cours-card">
+                <h3>Les lois de la réaction chimique</h3>
+                <p>Étudier la conservation de la masse et des atomes lors d’une réaction chimique.</p>
+                <a href="2ac-s1-lois-reaction-chimique.html" class="btn">Ouvrir le cours</a>
+            </div>
+
+            <div class="cours-card">
+                <h3>Les substances naturelles et synthétiques</h3>
+                <p>Distinguer les substances naturelles des substances fabriquées par l’être humain.</p>
+                <a href="2ac-s1-substances-naturelles-synthetiques.html" class="btn">Ouvrir le cours</a>
+            </div>
+
+            <div class="cours-card">
+                <h3>La pollution de l’air</h3>
+                <p>Identifier les causes, les conséquences et les moyens de réduire la pollution de l’air.</p>
+                <a href="2ac-s1-pollution-air.html" class="btn">Ouvrir le cours</a>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="semestre2">
+        <h2>Semestre 2</h2>
+
+        <div class="intro">
+            <p>
+                Cette section regroupe les cours du semestre 2 de la 2ème année collège.
+                Elle est consacrée principalement à la lumière, sa propagation, les couleurs,
+                les lentilles, les instruments optiques, le courant électrique alternatif
+                et l’installation électrique domestique.
+            </p>
+        </div>
+
+        <div class="cours-grid">
+
+            <div class="cours-card">
+                <h3>Les sources et les récepteurs de la lumière</h3>
+                <p>Identifier les sources lumineuses et les objets qui reçoivent la lumière.</p>
+                <a href="2ac-s2-sources-recepteurs-lumiere.html" class="btn">Ouvrir le cours</a>
+            </div>
+
+            <div class="cours-card">
+                <h3>Lumière et couleurs : dispersion de la lumière</h3>
+                <p>Comprendre la décomposition de la lumière blanche et l’apparition des couleurs.</p>
+                <a href="2ac-s2-lumiere-couleurs-dispersion.html" class="btn">Ouvrir le cours</a>
+            </div>
+
+            <div class="cours-card">
+                <h3>La propagation de la lumière</h3>
+                <p>Étudier le déplacement de la lumière dans un milieu transparent.</p>
+                <a href="2ac-s2-propagation-lumiere.html" class="btn">Ouvrir le cours</a>
+            </div>
+
+            <div class="cours-card">
+                <h3>Applications de la propagation rectiligne de la lumière</h3>
+                <p>Comprendre les ombres, les éclipses et quelques phénomènes optiques simples.</p>
+                <a href="2ac-s2-applications-propagation-rectiligne.html" class="btn">Ouvrir le cours</a>
+            </div>
+
+            <div class="cours-card">
+                <h3>Les lentilles minces - L’image formée par une lentille mince convergente</h3>
+                <p>Étudier les lentilles minces convergentes et la formation des images.</p>
+                <a href="2ac-s2-lentilles-minces-image.html" class="btn">Ouvrir le cours</a>
+            </div>
+
+            <div class="cours-card">
+                <h3>Étude de quelques instruments optiques</h3>
+                <p>Découvrir le principe de fonctionnement de quelques instruments optiques.</p>
+                <a href="2ac-s2-instruments-optiques.html" class="btn">Ouvrir le cours</a>
+            </div>
+
+            <div class="cours-card">
+                <h3>Le courant électrique alternatif sinusoïdal</h3>
+                <p>Comprendre les caractéristiques du courant électrique alternatif sinusoïdal.</p>
+                <a href="2ac-s2-courant-alternatif-sinusoidal.html" class="btn">Ouvrir le cours</a>
+            </div>
+
+            <div class="cours-card">
+                <h3>L’installation électrique domestique</h3>
+                <p>Comprendre l’organisation d’une installation électrique à la maison et les règles de sécurité.</p>
+                <a href="2ac-s2-installation-electrique-domestique.html" class="btn">Ouvrir le cours</a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 - Physique-Chimie Collège | 2ème année collège</p>
+    </footer>
 
 </body>
 </html>
