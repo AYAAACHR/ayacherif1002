@@ -2,11 +2,274 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Mon premier site web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physique-Chimie Collège</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f7fb;
+            color: #222;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f4c81, #1abc9c);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        nav {
+            background-color: #083b66;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #1abc9c;
+        }
+
+        section {
+            padding: 50px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        section h2 {
+            color: #0f4c81;
+            margin-bottom: 20px;
+            font-size: 28px;
+            border-left: 5px solid #1abc9c;
+            padding-left: 10px;
+        }
+
+        .intro {
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: #0f4c81;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            background-color: #1abc9c;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #14977d;
+        }
+
+        footer {
+            background-color: #083b66;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        .portfolio-box {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Bienvenue sur mon site web</h1>
-    <p>Ceci est mon premier site créé avec GitHub Pages.</p>
-    <p>Je suis en train d’apprendre à créer un site web.</p>
+
+    <header>
+        <h1>Physique-Chimie Collège</h1>
+        <p>
+            Plateforme pédagogique destinée aux élèves du collège pour apprendre,
+            réviser et s’entraîner en physique-chimie à travers des cours,
+            exercices, corrigés et ressources numériques.
+        </p>
+    </header>
+
+    <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#cours">Cours</a>
+        <a href="#exercices">Exercices</a>
+        <a href="#corriges">Corrigés</a>
+        <a href="#ressources">Ressources</a>
+        <a href="#portfolio">Portfolio</a>
+    </nav>
+
+    <section id="accueil">
+        <h2>Accueil</h2>
+        <div class="intro">
+            <p>
+                Ce site web a été conçu comme un espace d’apprentissage simple,
+                organisé et accessible. Il vise à accompagner les élèves du collège
+                dans la compréhension des notions essentielles en physique-chimie.
+            </p>
+            <p>
+                Le projet s’inscrit également dans une démarche de développement
+                des compétences numériques et pédagogiques de l’enseignant.
+            </p>
+        </div>
+    </section>
+
+    <section id="cours">
+        <h2>Cours de physique-chimie</h2>
+
+        <div class="cards">
+            <div class="card">
+                <h3>1ère année collège</h3>
+                <p>Cours simples et progressifs pour découvrir les bases de la matière, de l’air, de l’eau et de l’électricité.</p>
+                <a href="#" class="btn">Voir les cours</a>
+            </div>
+
+            <div class="card">
+                <h3>2ème année collège</h3>
+                <p>Notions de lumière, mélanges, transformations physiques et phénomènes électriques.</p>
+                <a href="#" class="btn">Voir les cours</a>
+            </div>
+
+            <div class="card">
+                <h3>3ème année collège</h3>
+                <p>Actions mécaniques, forces, équilibre, réactions chimiques et applications pratiques.</p>
+                <a href="#" class="btn">Voir les cours</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="exercices">
+        <h2>Exercices</h2>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Exercices d’application</h3>
+                <p>Des exercices courts pour vérifier la compréhension immédiate du cours.</p>
+            </div>
+
+            <div class="card">
+                <h3>Exercices de synthèse</h3>
+                <p>Des activités plus complètes pour relier plusieurs notions du programme.</p>
+            </div>
+
+            <div class="card">
+                <h3>Préparation aux contrôles</h3>
+                <p>Des sujets d’entraînement pour préparer les devoirs surveillés.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="corriges">
+        <h2>Corrigés</h2>
+
+        <div class="intro">
+            <p>
+                Les corrigés permettent aux élèves de comparer leurs réponses,
+                d’identifier leurs erreurs et de progresser de manière autonome.
+            </p>
+            <p>
+                Chaque corrigé sera accompagné d’une explication claire et progressive.
+            </p>
+        </div>
+    </section>
+
+    <section id="ressources">
+        <h2>Ressources pédagogiques</h2>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Fiches de résumé</h3>
+                <p>Fiches claires pour retenir les notions essentielles.</p>
+            </div>
+
+            <div class="card">
+                <h3>Vidéos explicatives</h3>
+                <p>Capsules vidéo pour faciliter la compréhension des phénomènes scientifiques.</p>
+            </div>
+
+            <div class="card">
+                <h3>Simulations numériques</h3>
+                <p>Activités interactives pour observer et manipuler virtuellement.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <h2>Valorisation dans le portfolio</h2>
+
+        <div class="portfolio-box">
+            <p>
+                Ce site web constitue une activité d’autoformation et de production
+                numérique pédagogique. Il montre la capacité à concevoir une ressource
+                éducative moderne, à organiser des contenus d’apprentissage et à intégrer
+                le numérique au service de l’enseignement-apprentissage.
+            </p>
+            <p>
+                Le projet peut être présenté dans le portfolio comme preuve de maîtrise
+                des outils numériques, d’innovation pédagogique et d’engagement dans
+                l’amélioration des apprentissages des élèves.
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 - Physique-Chimie Collège | Projet pédagogique numérique</p>
+    </footer>
+
 </body>
 </html>
