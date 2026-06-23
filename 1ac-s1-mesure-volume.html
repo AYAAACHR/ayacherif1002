@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesure du volume des solides et des liquides</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f4c81, #1abc9c);
+            color: white;
+            padding: 45px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 17px;
+        }
+
+        nav {
+            background-color: #083b66;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #1abc9c;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            color: #0f4c81;
+            margin: 30px 0 15px;
+            border-left: 5px solid #1abc9c;
+            padding-left: 10px;
+            font-size: 26px;
+        }
+
+        h3 {
+            color: #0f4c81;
+            margin-bottom: 10px;
+        }
+
+        .box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+
+        .definition {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .important {
+            background-color: #fff7e6;
+            border-left: 5px solid #f39c12;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .resume {
+            background-color: #eef4ff;
+            border-left: 5px solid #0f4c81;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .pdf-box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            height: 750px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #0f4c81;
+            color: white;
+        }
+
+        .formula {
+            text-align: center;
+            font-size: 22px;
+            color: #083b66;
+            font-weight: bold;
+            margin: 20px 0;
+            background-color: #eef4ff;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 10px 10px 0 0;
+            background-color: #1abc9c;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #14977d;
+        }
+
+        footer {
+            background-color: #083b66;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Mesure du volume des solides et des liquides</h1>
+        <p>1ère année collège - Semestre 1 | Cours, PDF, résumé et exercices</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="1ac.html">Cours 1AC</a>
+        <a href="#presentation">Présentation</a>
+        <a href="#pdf">PDF du cours</a>
+        <a href="#lecon">Leçon</a>
+        <a href="#resume">Résumé</a>
+        <a href="#exercices">Exercices</a>
+    </nav>
+
+    <div class="container">
+
+        <section id="presentation">
+            <h2>Présentation du cours</h2>
+
+            <div class="box">
+                <p>
+                    Ce cours explique comment mesurer le volume d’un liquide à l’aide
+                    d’un récipient gradué et comment déterminer le volume d’un solide.
+                    Il présente aussi les unités de volume, les unités de capacité,
+                    la lecture correcte d’une éprouvette graduée et la méthode du
+                    déplacement d’eau.
+                </p>
+
+                <div class="definition">
+                    <strong>Objectif du cours :</strong>
+                    savoir mesurer le volume d’un liquide, déterminer le volume d’un solide
+                    de forme quelconque et calculer le volume d’un solide de forme géométrique simple.
+                </div>
+            </div>
+        </section>
+
+        <section id="pdf">
+            <h2>Document PDF du cours</h2>
+
+            <div class="pdf-box">
+                <p>
+                    Vous pouvez consulter le PDF directement sur cette page,
+                    l’ouvrir dans un nouvel onglet ou le télécharger.
+                </p>
+
+                <a href="1ac-s1-mesure-volume.pdf" target="_blank" class="btn">Ouvrir le PDF</a>
+                <a href="1ac-s1-mesure-volume.pdf" download class="btn">Télécharger le PDF</a>
+
+                <iframe src="1ac-s1-mesure-volume.pdf" class="pdf-viewer"></iframe>
+            </div>
+        </section>
+
+        <section id="lecon">
+            <h2>1. Le volume</h2>
+
+            <div class="box">
+                <p>
+                    Le volume d’un corps correspond à la place occupée dans l’espace
+                    par ce corps. Un corps peut être solide, liquide ou gazeux.
+                </p>
+
+                <div class="definition">
+                    <strong>Définition :</strong>
+                    Le volume est la grandeur qui indique l’espace occupé par un corps.
+                </div>
+
+                <p>
+                    La capacité d’un récipient, appelée aussi contenance, représente
+                    le volume maximal de liquide que peut contenir ce récipient.
+                </p>
+
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    le volume concerne le corps étudié, tandis que la capacité concerne
+                    le récipient qui peut contenir un liquide.
+                </div>
+            </div>
+
+            <h2>2. Unités de mesure du volume</h2>
+
+            <div class="box">
+                <p>
+                    L’unité internationale de volume est le <strong>mètre cube</strong>,
+                    de symbole <strong>m³</strong>. Pour les liquides, on utilise aussi
+                    les unités de capacité comme le litre et ses sous-multiples.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Égalité importante</th>
+                        <th>Signification</th>
+                    </tr>
+                    <tr>
+                        <td>1 L = 1 dm³</td>
+                        <td>Un litre correspond à un décimètre cube.</td>
+                    </tr>
+                    <tr>
+                        <td>1 mL = 1 cm³</td>
+                        <td>Un millilitre correspond à un centimètre cube.</td>
+                    </tr>
+                    <tr>
+                        <td>1 cL = 10 mL</td>
+                        <td>Un centilitre contient dix millilitres.</td>
+                    </tr>
+                    <tr>
+                        <td>1 dm³ = 1000 cm³</td>
+                        <td>Un décimètre cube contient mille centimètres cubes.</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h2>3. Mesure du volume d’un liquide</h2>
+
+            <div class="box">
+                <p>
+                    Pour mesurer le volume d’un liquide, on utilise un récipient gradué
+                    comme un bécher, un erlenmeyer, un verre à pied, une fiole jaugée
+                    ou une éprouvette graduée.
+                </p>
+
+                <div class="important">
+                    <strong>Important :</strong>
+                    pour obtenir une mesure plus précise, on utilise généralement
+                    l’éprouvette graduée.
+                </div>
+
+                <table>
+                    <tr>
+                        <th>Instrument</th>
+                        <th>Utilisation</th>
+                    </tr>
+                    <tr>
+                        <td>Bécher</td>
+                        <td>Mesure approximative et manipulation de liquides.</td>
+                    </tr>
+                    <tr>
+                        <td>Erlenmeyer</td>
+                        <td>Mélange ou chauffage d’un liquide.</td>
+                    </tr>
+                    <tr>
+                        <td>Fiole jaugée</td>
+                        <td>Préparation d’un volume précis.</td>
+                    </tr>
+                    <tr>
+                        <td>Éprouvette graduée</td>
+                        <td>Mesure plus précise du volume d’un liquide.</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h2>4. Utilisation de l’éprouvette graduée</h2>
+
+            <div class="box">
+                <p>
+                    Pour mesurer correctement le volume d’un liquide avec une éprouvette
+                    graduée, il faut suivre plusieurs étapes.
+                </p>
+
+                <ol>
+                    <li>Repérer l’unité inscrite sur l’éprouvette, par exemple mL.</li>
+                    <li>Déterminer le volume correspondant à une division.</li>
+                    <li>Placer les yeux à la même hauteur que la surface du liquide.</li>
+                    <li>Lire la graduation qui coïncide avec le bas du ménisque.</li>
+                </ol>
+
+                <div class="definition">
+                    <strong>Ménisque :</strong>
+                    c’est la courbure observée à la surface du liquide dans l’éprouvette.
+                    Pour lire correctement, on regarde le bas du ménisque.
+                </div>
+            </div>
+
+            <h2>5. Mesure du volume d’un solide de forme quelconque</h2>
+
+            <div class="box">
+                <p>
+                    Pour mesurer le volume d’un solide qui n’a pas une forme géométrique
+                    simple, on utilise la méthode du déplacement d’eau.
+                </p>
+
+                <ol>
+                    <li>Verser de l’eau dans une éprouvette graduée.</li>
+                    <li>Lire le volume initial du liquide : V<sub>1</sub>.</li>
+                    <li>Introduire doucement le solide dans l’éprouvette.</li>
+                    <li>Lire le nouveau volume : V<sub>2</sub>.</li>
+                    <li>Calculer le volume du solide.</li>
+                </ol>
+
+                <div class="formula">
+                    V = V<sub>2</sub> - V<sub>1</sub>
+                </div>
+
+                <div class="important">
+                    <strong>Exemple :</strong>
+                    si V<sub>1</sub> = 12 mL et V<sub>2</sub> = 18 mL,
+                    alors le volume du solide est : V = 18 mL - 12 mL = 6 mL.
+                </div>
+            </div>
+
+            <h2>6. Mesure du volume d’un solide de forme géométrique simple</h2>
+
+            <div class="box">
+                <p>
+                    Pour un solide de forme géométrique simple, on peut calculer
+                    le volume à l’aide d’une relation mathématique.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Solide</th>
+                        <th>Formule du volume</th>
+                    </tr>
+                    <tr>
+                        <td>Cube</td>
+                        <td>V = c × c × c = c³</td>
+                    </tr>
+                    <tr>
+                        <td>Parallélépipède rectangle</td>
+                        <td>V = L × l × h</td>
+                    </tr>
+                    <tr>
+                        <td>Cylindre</td>
+                        <td>V = π × r² × h</td>
+                    </tr>
+                    <tr>
+                        <td>Sphère</td>
+                        <td>V = 4/3 × π × r³</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section id="resume">
+            <h2>Résumé du cours</h2>
+
+            <div class="resume">
+                <ul>
+                    <li>Le volume d’un corps est la place qu’il occupe dans l’espace.</li>
+                    <li>La capacité d’un récipient est le volume maximal de liquide qu’il peut contenir.</li>
+                    <li>L’unité internationale du volume est le mètre cube : m³.</li>
+                    <li>Pour les liquides, on utilise souvent le litre : 1 L = 1 dm³.</li>
+                    <li>On utilise l’éprouvette graduée pour mesurer précisément le volume d’un liquide.</li>
+                    <li>Pour lire correctement, l’œil doit être à la hauteur du bas du ménisque.</li>
+                    <li>Le volume d’un solide quelconque se mesure par déplacement d’eau : V = V<sub>2</sub> - V<sub>1</sub>.</li>
+                    <li>Le volume d’un solide géométrique simple se calcule avec une formule.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="exercices">
+            <h2>Exercices d’application</h2>
+
+            <div class="box">
+                <h3>Exercice 1 : Lire une éprouvette</h3>
+                <ol>
+                    <li>En quelle unité l’éprouvette est-elle graduée ?</li>
+                    <li>Quelle est la bonne position de l’œil pour bien lire le volume ?</li>
+                    <li>Quel est le volume correspondant à chaque division ?</li>
+                    <li>Indiquer le volume du liquide.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 2 : Mesure du volume d’un solide</h3>
+                <p>
+                    On verse de l’eau dans une éprouvette graduée.
+                    Le volume initial est V<sub>1</sub> = 100 mL.
+                    Après introduction d’un solide, le volume devient V<sub>2</sub> = 145 mL.
+                </p>
+                <ol>
+                    <li>Calculer le volume du solide.</li>
+                    <li>Exprimer ce volume en cm³.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 3 : Conversions</h3>
+                <p>Convertir les volumes suivants :</p>
+                <ol>
+                    <li>4,5 dL = .......... cm³</li>
+                    <li>325 daL = .......... m³</li>
+                    <li>13,8 dm³ = .......... cL</li>
+                    <li>12000 cm³ = .......... L</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 4 : Formule de volume</h3>
+                <p>Un cube a une arête de 4 cm.</p>
+                <ol>
+                    <li>Écrire la formule du volume d’un cube.</li>
+                    <li>Calculer le volume du cube.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="corrige">
+            <h2>Corrigé indicatif</h2>
+
+            <div class="box">
+                <h3>Correction de l’exercice 2</h3>
+                <p>
+                    V = V<sub>2</sub> - V<sub>1</sub> = 145 mL - 100 mL = 45 mL.
+                </p>
+                <p>
+                    Comme 1 mL = 1 cm³, le volume du solide est donc 45 cm³.
+                </p>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 4</h3>
+                <p>
+                    Volume d’un cube : V = c³.
+                </p>
+                <p>
+                    V = 4³ = 4 × 4 × 4 = 64 cm³.
+                </p>
+            </div>
+        </section>
+
+        <section id="navigation">
+            <h2>Navigation</h2>
+
+            <div class="box">
+                <a href="1ac-s1-etats-physiques.html" class="btn">Cours précédent</a>
+                <a href="1ac.html" class="btn">Retour aux cours de 1ère année</a>
+                <a href="index.html" class="btn">Retour à l’accueil</a>
+                <a href="1ac-s1-mesure-masse.html" class="btn">Cours suivant</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 - Physique-Chimie Collège | Mesure du volume</p>
+    </footer>
+
+</body>
+</html>
