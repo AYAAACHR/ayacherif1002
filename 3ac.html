@@ -2,31 +2,137 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <h1>Cours de 3ème année collège</h1>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours 3ème année collège</title>
 
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f7fb;
             color: #222;
-            padding: 30px;
+            line-height: 1.6;
         }
 
-        h1 {
+        header {
+            background: linear-gradient(135deg, #0f4c81, #1abc9c);
+            color: white;
+            padding: 45px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 17px;
+        }
+
+        nav {
+            background-color: #083b66;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #1abc9c;
+        }
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 45px 20px;
+        }
+
+        h2 {
             color: #0f4c81;
+            margin-bottom: 20px;
+            border-left: 5px solid #1abc9c;
+            padding-left: 10px;
+            font-size: 28px;
         }
 
-        .cours {
-            background: white;
-            padding: 20px;
-            margin: 15px 0;
-            border-radius: 10px;
+        .intro {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
         }
 
-        a {
+        .cours-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .cours-card {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .cours-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .cours-card h3 {
+            color: #0f4c81;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .cours-card p {
+            font-size: 15px;
+            color: #444;
+        }
+
+        .exam-card {
+            background-color: #fff;
+            padding: 22px;
+            border-radius: 12px;
+            border-left: 5px solid #f39c12;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .exam-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .exam-card h3 {
+            color: #0f4c81;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .exam-card p {
+            font-size: 15px;
+            color: #444;
+        }
+
+        .btn {
             display: inline-block;
-            margin-top: 20px;
+            margin-top: 15px;
             background-color: #1abc9c;
             color: white;
             padding: 10px 16px;
@@ -34,29 +140,222 @@
             text-decoration: none;
             font-weight: bold;
         }
+
+        .btn:hover {
+            background-color: #14977d;
+        }
+
+        .exam-btn {
+            background-color: #f39c12;
+        }
+
+        .exam-btn:hover {
+            background-color: #d68910;
+        }
+
+        footer {
+            background-color: #083b66;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
     </style>
 </head>
 
 <body>
 
-    <h1>Cours de 3ème année collège</h1>
+    <header>
+        <h1>Cours de 3ème année collège</h1>
+        <p>Physique-Chimie | Cours, résumés, exercices, corrigés, documents PDF et examens</p>
+    </header>
 
-    <div class="cours">
-        <h2>L’eau dans la nature</h2>
-        <p>Résumé, cours et exercices.</p>
-    </div>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="#semestre1">Semestre 1</a>
+        <a href="#semestre2">Semestre 2</a>
+        <a href="#examens">Examens</a>
+    </nav>
 
-    <div class="cours">
-        <h2>L’air qui nous entoure</h2>
-        <p>Résumé, cours et exercices.</p>
-    </div>
+    <section id="semestre1">
+        <h2>Semestre 1</h2>
 
-    <div class="cours">
-        <h2>L’électricité</h2>
-        <p>Résumé, cours et exercices.</p>
-    </div>
+        <div class="intro">
+            <p>
+                Cette section regroupe les cours du semestre 1 de la 3ème année collège.
+                Elle traite principalement des matériaux, des atomes et des ions,
+                de l’oxydation des métaux, des combustions, des solutions acides et basiques,
+                des tests d’ions et des dangers de certains matériaux sur la santé
+                et l’environnement.
+            </p>
+        </div>
 
-    <a href="index.html">Retour à l’accueil</a>
+        <div class="cours-grid">
+
+            <div class="cours-card">
+                <h3>Quelques matériaux au quotidien</h3>
+                <p>Identifier quelques matériaux utilisés dans la vie quotidienne et leurs propriétés.</p>
+                <a href="3ac-s1-materiaux-quotidien.html" class="btn">Ouvrir le cours</a>
+            </div>
+
+            <div class="cours-card">
+                <h3>Les atomes et les ions</h3>
+                <p>Comprendre la différence entre un atome, un ion positif et un ion négatif.</p>
+                <a href="3ac-s1-atomes-ions.html" class="btn">Ouvrir le cours</a>
+            </div>
+
+            <div class="cours-card">
+                <h3>Oxydation des métaux dans l’air</h3>
+                <p>Étudier l’action de l’air sur certains métaux et la formation des oxydes.</p>
+                <a href="3ac-s1-oxydation-metaux-air.html" class="btn">Ouvrir le cours</a>
+            </div>
+
+            <div class="cours-card">
+                <h3>Combustion des matériaux organiques dans l’air</h3>
+                <p>Comprendre les produits formés lors de la combustion des matériaux organiques.</p>
+                <a href="3ac-s1-combustion-materiaux-organiques.html" class="btn">Ouvrir le cours</a>
+            </div>
+
+            <div class="cours-card">
+                <h3>Les solutions acides et basiques</h3>
+                <p>Distinguer une solution acide, basique et neutre à l’aide du pH.</p>
+                <a href="3ac-s1-solutions-acides-basiques.html" class="btn">Ouvrir le cours</a>
+            </div>
+
+            <div class="cours-card">
+                <h3>Tests de reconnaissance de quelques ions</h3>
+                <p>Identifier certains ions à l’aide de tests chimiques simples.</p>
+                <a href="3ac-s1-tests-reconnaissance-ions.html" class="btn">Ouvrir le cours</a>
+            </div>
+
+            <div class="cours-card">
+                <h3>Réactions de quelques métaux avec les solutions acides et basiques</h3>
+                <p>Étudier les réactions de certains métaux avec les solutions acides et basiques.</p>
+                <a href="3ac-s1-reactions-metaux-solutions.html" class="btn">Ouvrir le cours</a>
+            </div>
+
+            <div class="cours-card">
+                <h3>Danger de quelques matériaux utilisés dans la vie quotidienne</h3>
+                <p>Comprendre les effets de certains matériaux sur la santé et l’environnement.</p>
+                <a href="3ac-s1-danger-materiaux.html" class="btn">Ouvrir le cours</a>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="semestre2">
+        <h2>Semestre 2</h2>
+
+        <div class="intro">
+            <p>
+                Cette section regroupe les cours du semestre 2 de la 3ème année collège.
+                Elle est consacrée à la mécanique, aux forces, au poids et à la masse,
+                ainsi qu’à l’électricité : loi d’Ohm, puissance électrique et énergie électrique.
+            </p>
+        </div>
+
+        <div class="cours-grid">
+
+            <div class="cours-card">
+                <h3>Le mouvement et le repos</h3>
+                <p>Comprendre la notion de mouvement, de repos et de référentiel.</p>
+                <a href="3ac-s2-mouvement-repos.html" class="btn">Ouvrir le cours</a>
+            </div>
+
+            <div class="cours-card">
+                <h3>La vitesse moyenne</h3>
+                <p>Calculer la vitesse moyenne d’un mobile à partir de la distance et du temps.</p>
+                <a href="3ac-s2-vitesse-moyenne.html" class="btn">Ouvrir le cours</a>
+            </div>
+
+            <div class="cours-card">
+                <h3>Les actions mécaniques</h3>
+                <p>Identifier une action mécanique et ses effets sur un corps.</p>
+                <a href="3ac-s2-actions-mecaniques.html" class="btn">Ouvrir le cours</a>
+            </div>
+
+            <div class="cours-card">
+                <h3>Les forces</h3>
+                <p>Représenter une force par un vecteur et connaître ses caractéristiques.</p>
+                <a href="3ac-s2-forces.html" class="btn">Ouvrir le cours</a>
+            </div>
+
+            <div class="cours-card">
+                <h3>Équilibre d’un solide soumis à deux forces</h3>
+                <p>Étudier les conditions d’équilibre d’un solide soumis à deux forces.</p>
+                <a href="3ac-s2-equilibre-deux-forces.html" class="btn">Ouvrir le cours</a>
+            </div>
+
+            <div class="cours-card">
+                <h3>Le poids et la masse</h3>
+                <p>Distinguer le poids et la masse et comprendre leur relation.</p>
+                <a href="3ac-s2-poids-masse.html" class="btn">Ouvrir le cours</a>
+            </div>
+
+            <div class="cours-card">
+                <h3>La loi d’Ohm</h3>
+                <p>Comprendre la relation entre la tension, l’intensité et la résistance électrique.</p>
+                <a href="3ac-s2-loi-ohm.html" class="btn">Ouvrir le cours</a>
+            </div>
+
+            <div class="cours-card">
+                <h3>La puissance électrique</h3>
+                <p>Calculer la puissance électrique consommée par un appareil.</p>
+                <a href="3ac-s2-puissance-electrique.html" class="btn">Ouvrir le cours</a>
+            </div>
+
+            <div class="cours-card">
+                <h3>L’énergie électrique</h3>
+                <p>Calculer l’énergie électrique consommée et comprendre son importance.</p>
+                <a href="3ac-s2-energie-electrique.html" class="btn">Ouvrir le cours</a>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="examens">
+        <h2>Examens Locaux et Régionaux</h2>
+
+        <div class="intro">
+            <p>
+                Cette partie est réservée aux examens de la 3ème année collège.
+                Elle permet aux élèves de s’entraîner avec des sujets d’examens locaux
+                et régionaux, accompagnés de corrigés et de conseils méthodologiques.
+            </p>
+        </div>
+
+        <div class="cours-grid">
+
+            <div class="exam-card">
+                <h3>Examens locaux</h3>
+                <p>Sujets d’examens locaux de physique-chimie pour s’entraîner progressivement.</p>
+                <a href="3ac-examens-locaux.html" class="btn exam-btn">Voir les examens</a>
+            </div>
+
+            <div class="exam-card">
+                <h3>Examens régionaux</h3>
+                <p>Sujets régionaux pour préparer efficacement l’examen final.</p>
+                <a href="3ac-examens-regionaux.html" class="btn exam-btn">Voir les examens</a>
+            </div>
+
+            <div class="exam-card">
+                <h3>Corrigés des examens</h3>
+                <p>Corrigés détaillés pour comprendre les réponses et éviter les erreurs fréquentes.</p>
+                <a href="3ac-corriges-examens.html" class="btn exam-btn">Voir les corrigés</a>
+            </div>
+
+            <div class="exam-card">
+                <h3>Conseils de préparation</h3>
+                <p>Méthodes de révision, gestion du temps et conseils pour réussir l’examen.</p>
+                <a href="3ac-conseils-examens.html" class="btn exam-btn">Voir les conseils</a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 - Physique-Chimie Collège | 3ème année collège</p>
+    </footer>
 
 </body>
 </html>
