@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Physique-Chimie Collège</title>
 
-    <!-- Logo dans l’onglet du navigateur -->
     <link rel="icon" type="image/png" href="logo.png">
 
     <style>
@@ -15,6 +14,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
@@ -22,10 +25,81 @@
             color: #222;
         }
 
+        /* Barre de navigation */
+        .navbar {
+            background-color: #083b66;
+            color: white;
+            padding: 12px 25px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .nav-logo img {
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
+            border-radius: 50%;
+            background-color: white;
+            padding: 4px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 22px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
+            transition: 0.3s;
+            padding: 8px 10px;
+            border-radius: 6px;
+        }
+
+        .nav-links a:hover {
+            background-color: #1abc9c;
+            color: white;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .menu-toggle span {
+            width: 28px;
+            height: 3px;
+            background-color: white;
+            border-radius: 5px;
+        }
+
         header {
             background: linear-gradient(135deg, #0f4c81, #1abc9c);
             color: white;
-            padding: 50px 20px;
+            padding: 70px 20px;
             text-align: center;
         }
 
@@ -41,40 +115,21 @@
         }
 
         header h1 {
-            font-size: 36px;
+            font-size: 38px;
             margin-bottom: 15px;
         }
 
         header p {
             font-size: 18px;
-            max-width: 800px;
+            max-width: 850px;
             margin: auto;
-        }
-
-        nav {
-            background-color: #083b66;
-            padding: 12px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 10px;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            color: #1abc9c;
         }
 
         section {
-            padding: 50px 20px;
+            padding: 60px 20px;
             max-width: 1100px;
             margin: auto;
+            scroll-margin-top: 90px;
         }
 
         section h2 {
@@ -142,13 +197,80 @@
             padding: 25px;
             margin-top: 40px;
         }
+
+        /* Version smartphone */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 66px;
+                left: 0;
+                width: 100%;
+                background-color: #083b66;
+                flex-direction: column;
+                text-align: center;
+                gap: 0;
+                display: none;
+                padding: 15px 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                width: 100%;
+                padding: 14px;
+                border-radius: 0;
+            }
+
+            header {
+                padding: 55px 20px;
+            }
+
+            header h1 {
+                font-size: 30px;
+            }
+
+            header p {
+                font-size: 16px;
+            }
+        }
     </style>
 </head>
 
 <body>
 
+    <nav class="navbar">
+        <div class="nav-container">
+
+            <div class="nav-logo">
+                <img src="logo.png" alt="Logo" onerror="this.style.display='none'">
+                <span>Physique-Chimie</span>
+            </div>
+
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="nav-links" id="navLinks">
+                <a href="#accueil" onclick="closeMenu()">Accueil</a>
+                <a href="#cours" onclick="closeMenu()">Cours</a>
+                <a href="#exercices" onclick="closeMenu()">Exercices</a>
+                <a href="#corriges" onclick="closeMenu()">Corrigés</a>
+                <a href="#ressources" onclick="closeMenu()">Ressources</a>
+            </div>
+
+        </div>
+    </nav>
+
     <header>
-        <img src="logo.png" alt="Logo Physique-Chimie Collège" class="site-logo">
+        <img src="logo.png" alt="Logo Physique-Chimie Collège" class="site-logo" onerror="this.style.display='none'">
 
         <h1>Physique-Chimie Collège</h1>
 
@@ -158,14 +280,6 @@
             exercices, corrigés et ressources numériques.
         </p>
     </header>
-
-    <nav>
-        <a href="#accueil">Accueil</a>
-        <a href="#cours">Cours</a>
-        <a href="#exercices">Exercices</a>
-        <a href="#corriges">Corrigés</a>
-        <a href="#ressources">Ressources</a>
-    </nav>
 
     <section id="accueil">
         <h2>Accueil</h2>
@@ -303,6 +417,16 @@
     <footer>
         <p>© 2026 - Physique-Chimie Collège | Projet pédagogique numérique</p>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("navLinks").classList.toggle("active");
+        }
+
+        function closeMenu() {
+            document.getElementById("navLinks").classList.remove("active");
+        }
+    </script>
 
 </body>
 </html>
