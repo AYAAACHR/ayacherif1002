@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quelques propriétés de l’air et ses constituants</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f4c81, #1abc9c);
+            color: white;
+            padding: 45px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 17px;
+        }
+
+        nav {
+            background-color: #083b66;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #1abc9c;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            color: #0f4c81;
+            margin: 30px 0 15px;
+            border-left: 5px solid #1abc9c;
+            padding-left: 10px;
+            font-size: 26px;
+        }
+
+        h3 {
+            color: #0f4c81;
+            margin-bottom: 10px;
+        }
+
+        .box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+
+        .definition {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .important {
+            background-color: #fff7e6;
+            border-left: 5px solid #f39c12;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .resume {
+            background-color: #eef4ff;
+            border-left: 5px solid #0f4c81;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .pdf-box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            height: 750px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #0f4c81;
+            color: white;
+        }
+
+        .formula {
+            text-align: center;
+            font-size: 22px;
+            color: #083b66;
+            font-weight: bold;
+            margin: 20px 0;
+            background-color: #eef4ff;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 10px 10px 0 0;
+            background-color: #1abc9c;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #14977d;
+        }
+
+        footer {
+            background-color: #083b66;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Quelques propriétés de l’air et ses constituants</h1>
+        <p>2ème année collège - Semestre 1 | Cours, PDF, résumé et exercices</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="2ac.html">Cours 2AC</a>
+        <a href="#presentation">Présentation</a>
+        <a href="#pdf">PDF du cours</a>
+        <a href="#lecon">Leçon</a>
+        <a href="#resume">Résumé</a>
+        <a href="#exercices">Exercices</a>
+    </nav>
+
+    <div class="container">
+
+        <section id="presentation">
+            <h2>Présentation du cours</h2>
+
+            <div class="box">
+                <p>
+                    Ce cours présente la composition de l’air, quelques propriétés physiques
+                    de l’air, la relation entre son volume et sa pression, ainsi que la masse
+                    de l’air. Il s’appuie sur des expériences simples comme la combustion
+                    d’une bougie, la seringue reliée à un manomètre et la pesée d’un ballon.
+                </p>
+
+                <div class="definition">
+                    <strong>Objectif du cours :</strong>
+                    connaître les principaux constituants de l’air, comprendre que l’air est
+                    compressible, expansible, qu’il exerce une pression et qu’il possède une masse.
+                </div>
+            </div>
+        </section>
+
+        <section id="pdf">
+            <h2>Document PDF du cours</h2>
+
+            <div class="pdf-box">
+                <p>
+                    Vous pouvez consulter le PDF directement sur cette page,
+                    l’ouvrir dans un nouvel onglet ou le télécharger.
+                </p>
+
+                <a href="./2ac-s1-proprietes-air-constituants.pdf" target="_blank" class="btn">Ouvrir le PDF</a>
+                <a href="./2ac-s1-proprietes-air-constituants.pdf" download class="btn">Télécharger le PDF</a>
+
+                <iframe src="./2ac-s1-proprietes-air-constituants.pdf" class="pdf-viewer"></iframe>
+            </div>
+        </section>
+
+        <section id="lecon">
+            <h2>1. Introduction</h2>
+
+            <div class="box">
+                <p>
+                    L’air qui nous entoure est un mélange de plusieurs gaz. Il est invisible,
+                    mais il occupe un espace, exerce une pression et possède une masse.
+                </p>
+
+                <div class="definition">
+                    <strong>Problématique :</strong>
+                    De quoi l’air est-il constitué ? Quelles sont ses principales propriétés ?
+                </div>
+            </div>
+
+            <h2>2. Composition de l’air</h2>
+
+            <div class="box">
+                <h3>Expérience</h3>
+
+                <p>
+                    On place une bougie allumée dans un récipient contenant de l’eau colorée,
+                    puis on recouvre la bougie avec une éprouvette graduée.
+                </p>
+
+                <h3>Observation</h3>
+
+                <ul>
+                    <li>L’eau monte dans l’éprouvette d’environ un cinquième.</li>
+                    <li>La bougie s’éteint après un certain temps.</li>
+                    <li>Le gaz consommé par la combustion est le dioxygène.</li>
+                </ul>
+
+                <h3>Conclusion</h3>
+
+                <p>
+                    L’air est un mélange homogène de plusieurs gaz.
+                    Ses principaux constituants sont le diazote, le dioxygène et d’autres gaz.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Constituant de l’air</th>
+                        <th>Pourcentage approximatif</th>
+                        <th>Rôle ou remarque</th>
+                    </tr>
+                    <tr>
+                        <td>Diazote</td>
+                        <td>78 %</td>
+                        <td>Gaz majoritaire dans l’air.</td>
+                    </tr>
+                    <tr>
+                        <td>Dioxygène</td>
+                        <td>21 %</td>
+                        <td>Gaz nécessaire à la respiration et à certaines combustions.</td>
+                    </tr>
+                    <tr>
+                        <td>Autres gaz</td>
+                        <td>1 %</td>
+                        <td>Dioxyde de carbone, vapeur d’eau, gaz rares, etc.</td>
+                    </tr>
+                </table>
+
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    l’air contient environ 80 % de diazote et 20 % de dioxygène.
+                </div>
+            </div>
+
+            <h2>3. Volume et pression de l’air</h2>
+
+            <div class="box">
+                <h3>Expérience</h3>
+
+                <p>
+                    On prend une seringue reliée à un manomètre. On pousse le piston
+                    pour comprimer l’air, puis on tire le piston pour augmenter son volume.
+                </p>
+
+                <h3>Observations</h3>
+
+                <ul>
+                    <li>Lorsqu’on pousse le piston, le volume de l’air diminue et sa pression augmente.</li>
+                    <li>Lorsqu’on tire le piston, le volume de l’air augmente et sa pression diminue.</li>
+                </ul>
+
+                <div class="definition">
+                    <strong>Pression :</strong>
+                    la pression d’un gaz est liée aux chocs des particules du gaz contre les parois
+                    du récipient qui le contient. Elle se mesure avec un manomètre.
+                </div>
+
+                <div class="important">
+                    <strong>Conclusion :</strong>
+                    comme tous les gaz, l’air est compressible et expansible. Il n’a pas de volume propre.
+                </div>
+            </div>
+
+            <h2>4. Explication par le modèle particulaire</h2>
+
+            <div class="box">
+                <p>
+                    On peut représenter l’air comme un ensemble de particules très petites,
+                    invisibles à l’œil nu.
+                </p>
+
+                <ul>
+                    <li>Le nombre de particules ne change pas.</li>
+                    <li>La taille et la forme des particules ne changent pas.</li>
+                    <li>Quand l’air est comprimé, les particules deviennent moins espacées.</li>
+                    <li>Quand l’air se détend, les particules deviennent plus espacées.</li>
+                </ul>
+
+                <div class="important">
+                    <strong>Interprétation :</strong>
+                    lorsque l’air est comprimé, il occupe un volume plus petit.
+                    Les particules sont plus rapprochées, donc la pression augmente.
+                </div>
+
+                <p>
+                    C’est pour cette raison qu’une petite bouteille de plongée peut contenir
+                    une grande quantité d’air comprimé.
+                </p>
+            </div>
+
+            <h2>5. Masse de l’air</h2>
+
+            <div class="box">
+                <h3>Expérience</h3>
+
+                <p>
+                    On pose un ballon bien gonflé sur le plateau d’une balance et on mesure sa masse.
+                    Ensuite, on retire une quantité d’air du ballon, puis on mesure de nouveau sa masse.
+                </p>
+
+                <h3>Observation</h3>
+
+                <p>
+                    Après avoir retiré 2 litres d’air du ballon, la masse du ballon diminue.
+                    Cela montre que l’air retiré possédait une masse.
+                </p>
+
+                <div class="formula">
+                    m = m<sub>2</sub> - m<sub>1</sub> = 2,6 g pour 2 L d’air
+                </div>
+
+                <h3>Conclusion</h3>
+
+                <div class="definition">
+                    <strong>Conclusion :</strong>
+                    l’air a une masse. Dans les conditions habituelles,
+                    la masse d’un litre d’air est environ <strong>1,3 g</strong>.
+                </div>
+
+                <table>
+                    <tr>
+                        <th>Volume d’air</th>
+                        <th>Masse approximative</th>
+                    </tr>
+                    <tr>
+                        <td>1 L</td>
+                        <td>1,3 g</td>
+                    </tr>
+                    <tr>
+                        <td>2 L</td>
+                        <td>2,6 g</td>
+                    </tr>
+                    <tr>
+                        <td>10 L</td>
+                        <td>13 g</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section id="resume">
+            <h2>Résumé du cours</h2>
+
+            <div class="resume">
+                <ul>
+                    <li>L’air est un mélange homogène de plusieurs gaz.</li>
+                    <li>Les principaux constituants de l’air sont le diazote, le dioxygène et d’autres gaz.</li>
+                    <li>L’air contient environ 78 % de diazote et 21 % de dioxygène.</li>
+                    <li>Le dioxygène est nécessaire à la respiration et à certaines combustions.</li>
+                    <li>L’air est compressible : son volume peut diminuer.</li>
+                    <li>L’air est expansible : son volume peut augmenter.</li>
+                    <li>Quand le volume de l’air diminue, sa pression augmente.</li>
+                    <li>Quand le volume de l’air augmente, sa pression diminue.</li>
+                    <li>L’air possède une masse : 1 L d’air a une masse d’environ 1,3 g.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="exercices">
+            <h2>Exercices d’application</h2>
+
+            <div class="box">
+                <h3>Exercice 1 : Compléter les phrases</h3>
+
+                <p>
+                    Complète avec les mots suivants :
+                    <strong>diazote - gaz - dioxygène - 1,3 g - manomètre - pascal - mélange</strong>.
+                </p>
+
+                <ol>
+                    <li>L’air est un __________ constitué principalement de deux __________.</li>
+                    <li>L’air contient environ 80 % de __________ et 20 % de __________.</li>
+                    <li>Le gaz indispensable à la vie est le __________.</li>
+                    <li>Dans les conditions normales, la masse d’un litre d’air est de __________.</li>
+                    <li>La pression d’un gaz se mesure avec un __________. L’unité de pression est le __________.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 2 : Compression et détente</h3>
+
+                <ol>
+                    <li>Que se passe-t-il lorsque l’on pousse le piston d’une seringue contenant de l’air ?</li>
+                    <li>Que se passe-t-il lorsque l’on tire le piston ?</li>
+                    <li>Comment évolue la pression de l’air dans chaque cas ?</li>
+                    <li>Pourquoi dit-on que l’air est compressible et expansible ?</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 3 : Masse de l’air</h3>
+
+                <p>
+                    Un ballon a une masse de 451 g. Après avoir ajouté de l’air,
+                    sa masse devient 457,9 g.
+                </p>
+
+                <ol>
+                    <li>Quelle est la masse d’air ajoutée dans le ballon ?</li>
+                    <li>Sachant que la masse de 1 L d’air est 1,3 g, calculer le volume d’air ajouté.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 4 : Gaz butane</h3>
+
+                <p>
+                    Un briquet contient du butane. Sa masse avant extraction est 19,55 g.
+                    Sa masse après extraction est 15,50 g. Le volume du butane extrait est 1,5 L.
+                </p>
+
+                <ol>
+                    <li>Quelle est la masse du butane extrait ?</li>
+                    <li>Calculer la masse volumique du butane.</li>
+                    <li>Comparer cette masse volumique avec celle de l’air.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="corrige">
+            <h2>Corrigé indicatif</h2>
+
+            <div class="box">
+                <h3>Correction de l’exercice 1</h3>
+
+                <ol>
+                    <li>mélange - gaz</li>
+                    <li>diazote - dioxygène</li>
+                    <li>dioxygène</li>
+                    <li>1,3 g</li>
+                    <li>manomètre - pascal</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 2</h3>
+
+                <ol>
+                    <li>Quand on pousse le piston, le volume de l’air diminue.</li>
+                    <li>Quand on tire le piston, le volume de l’air augmente.</li>
+                    <li>Si le volume diminue, la pression augmente. Si le volume augmente, la pression diminue.</li>
+                    <li>L’air est compressible car on peut diminuer son volume, et expansible car on peut l’augmenter.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 3</h3>
+
+                <p>
+                    Masse d’air ajoutée :
+                </p>
+
+                <div class="formula">
+                    m = 457,9 g - 451 g = 6,9 g
+                </div>
+
+                <p>
+                    Volume d’air ajouté :
+                </p>
+
+                <div class="formula">
+                    V = 6,9 ÷ 1,3 ≈ 5,3 L
+                </div>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 4</h3>
+
+                <p>
+                    Masse du butane extrait :
+                </p>
+
+                <div class="formula">
+                    m = 19,55 g - 15,50 g = 4,05 g
+                </div>
+
+                <p>
+                    Masse volumique du butane :
+                </p>
+
+                <div class="formula">
+                    ρ = 4,05 ÷ 1,5 = 2,7 g/L
+                </div>
+
+                <p>
+                    Comme 2,7 g/L est supérieur à 1,3 g/L, le butane est plus dense que l’air.
+                </p>
+            </div>
+        </section>
+
+        <section id="navigation">
+            <h2>Navigation</h2>
+
+            <div class="box">
+                <a href="2ac-s1-air-qui-nous-entoure.html" class="btn">Cours précédent</a>
+                <a href="2ac.html" class="btn">Retour aux cours de 2ème année</a>
+                <a href="index.html" class="btn">Retour à l’accueil</a>
+                <a href="2ac-s1-molecules-atomes.html" class="btn">Cours suivant</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 - Physique-Chimie Collège | Propriétés de l’air</p>
+    </footer>
+
+</body>
+</html>
