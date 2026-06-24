@@ -3,7 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Physique-Chimie Collège</title>
+    <title>Physique-Chimie Collège | Cours, exercices et corrigés</title>
+
+    <meta name="description" content="Site éducatif de physique-chimie pour les élèves du collège : cours, exercices corrigés, résumés, PDF, examens locaux, examens régionaux et ressources pédagogiques pour 1AC, 2AC et 3AC.">
+    <meta name="keywords" content="physique chimie collège, cours physique chimie, exercices corrigés physique chimie, physique chimie 1AC, physique chimie 2AC, physique chimie 3AC, cours collège Maroc, examens locaux 3AC, examens régionaux 3AC, PDF physique chimie">
+    <meta name="author" content="Physique-Chimie Collège">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="fr">
+    <meta name="theme-color" content="#0f4c81">
+
+    <meta property="og:title" content="Physique-Chimie Collège">
+    <meta property="og:description" content="Cours, exercices, corrigés et ressources numériques pour les élèves du collège.">
+    <meta property="og:type" content="website">
 
     <link rel="icon" type="image/png" href="logo.png">
 
@@ -20,28 +31,22 @@
 
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
             background-color: #f4f7fb;
             color: #222;
+            line-height: 1.7;
         }
 
-        /* Barre de navigation */
         .navbar {
             background-color: #083b66;
             color: white;
-            padding: 12px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 8%;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.18);
         }
 
         .nav-logo {
@@ -49,7 +54,7 @@
             align-items: center;
             gap: 10px;
             font-weight: bold;
-            font-size: 18px;
+            font-size: 20px;
         }
 
         .nav-logo img {
@@ -63,23 +68,18 @@
 
         .nav-links {
             display: flex;
-            gap: 22px;
-            align-items: center;
+            gap: 25px;
         }
 
         .nav-links a {
             color: white;
             text-decoration: none;
             font-weight: bold;
-            font-size: 15px;
-            transition: 0.3s;
-            padding: 8px 10px;
-            border-radius: 6px;
+            font-size: 16px;
         }
 
         .nav-links a:hover {
-            background-color: #1abc9c;
-            color: white;
+            color: #1abc9c;
         }
 
         .menu-toggle {
@@ -96,91 +96,135 @@
             border-radius: 5px;
         }
 
-        header {
-            background: linear-gradient(135deg, #0f4c81, #1abc9c);
+        header.hero {
+            position: relative;
             color: white;
-            padding: 70px 20px;
+            padding: 80px 20px;
             text-align: center;
+            overflow: hidden;
+            min-height: 470px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                135deg,
+                rgba(15, 76, 129, 0.78),
+                rgba(26, 188, 156, 0.68)
+            );
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: auto;
         }
 
         .site-logo {
             width: 95px;
             height: 95px;
             object-fit: contain;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             border-radius: 50%;
             background-color: white;
             padding: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.20);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
         }
 
         header h1 {
-            font-size: 38px;
-            margin-bottom: 15px;
+            font-size: 42px;
+            margin-bottom: 18px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
         }
 
         header p {
-            font-size: 18px;
-            max-width: 850px;
+            font-size: 20px;
+            max-width: 950px;
             margin: auto;
+            line-height: 1.8;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
         }
 
-        section {
-            padding: 60px 20px;
+        .container {
             max-width: 1100px;
             margin: auto;
-            scroll-margin-top: 90px;
+            padding: 45px 20px;
         }
 
-        section h2 {
+        h2 {
             color: #0f4c81;
-            margin-bottom: 20px;
-            font-size: 28px;
+            margin: 30px 0 18px;
             border-left: 5px solid #1abc9c;
-            padding-left: 10px;
+            padding-left: 12px;
+            font-size: 30px;
         }
 
-        .intro {
+        .box {
             background-color: white;
             padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-radius: 14px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
         }
 
-        .cards {
+        .levels {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
             margin-top: 25px;
         }
 
-        .card {
+        .level-card {
             background-color: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            transition: 0.3s;
+            border-radius: 16px;
+            padding: 28px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
+        .level-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.16);
         }
 
-        .card h3 {
+        .level-card h3 {
             color: #0f4c81;
-            margin-bottom: 10px;
+            font-size: 26px;
+            margin-bottom: 12px;
         }
 
-        .card p {
-            color: #444;
+        .level-card p {
+            margin-bottom: 18px;
         }
 
         .btn {
             display: inline-block;
-            margin-top: 15px;
             background-color: #1abc9c;
             color: white;
-            padding: 10px 16px;
+            padding: 11px 18px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
@@ -190,16 +234,56 @@
             background-color: #14977d;
         }
 
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+            margin-top: 25px;
+        }
+
+        .feature-card {
+            background-color: white;
+            border-radius: 14px;
+            padding: 22px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .feature-card h3 {
+            color: #0f4c81;
+            margin-bottom: 10px;
+        }
+
         footer {
             background-color: #083b66;
             color: white;
             text-align: center;
-            padding: 25px;
+            padding: 28px;
             margin-top: 40px;
         }
 
-        /* Version smartphone */
+        @media (max-width: 900px) {
+            .levels {
+                grid-template-columns: 1fr;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 34px;
+            }
+
+            header p {
+                font-size: 17px;
+            }
+        }
+
         @media (max-width: 768px) {
+            .navbar {
+                padding: 12px 5%;
+            }
+
             .menu-toggle {
                 display: flex;
             }
@@ -211,10 +295,10 @@
                 width: 100%;
                 background-color: #083b66;
                 flex-direction: column;
-                text-align: center;
+                align-items: center;
                 gap: 0;
                 display: none;
-                padding: 15px 0;
+                padding: 10px 0;
             }
 
             .nav-links.active {
@@ -222,13 +306,19 @@
             }
 
             .nav-links a {
+                padding: 12px;
                 width: 100%;
-                padding: 14px;
-                border-radius: 0;
+                text-align: center;
             }
 
-            header {
-                padding: 55px 20px;
+            header.hero {
+                min-height: 390px;
+                padding: 60px 15px;
+            }
+
+            .hero-bg-video {
+                width: auto;
+                height: 100%;
             }
 
             header h1 {
@@ -238,6 +328,10 @@
             header p {
                 font-size: 16px;
             }
+
+            .container {
+                padding: 35px 15px;
+            }
         }
     </style>
 </head>
@@ -245,177 +339,176 @@
 <body>
 
     <nav class="navbar">
-        <div class="nav-container">
+        <div class="nav-logo">
+            <img src="logo.png" alt="Logo Physique-Chimie" onerror="this.style.display='none'">
+            <span>Physique-Chimie</span>
+        </div>
 
-            <div class="nav-logo">
-                <img src="logo.png" alt="Logo" onerror="this.style.display='none'">
-                <span>Physique-Chimie</span>
-            </div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
 
-            <div class="menu-toggle" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-
-            <div class="nav-links" id="navLinks">
-                <a href="#accueil" onclick="closeMenu()">Accueil</a>
-                <a href="#cours" onclick="closeMenu()">Cours</a>
-                <a href="#exercices" onclick="closeMenu()">Exercices</a>
-                <a href="#corriges" onclick="closeMenu()">Corrigés</a>
-                <a href="#ressources" onclick="closeMenu()">Ressources</a>
-            </div>
-
+        <div class="nav-links" id="navLinks">
+            <a href="#accueil" onclick="closeMenu()">Accueil</a>
+            <a href="#cours" onclick="closeMenu()">Cours</a>
+            <a href="#exercices" onclick="closeMenu()">Exercices</a>
+            <a href="#corriges" onclick="closeMenu()">Corrigés</a>
+            <a href="#ressources" onclick="closeMenu()">Ressources</a>
         </div>
     </nav>
 
-    <header>
-        <img src="logo.png" alt="Logo Physique-Chimie Collège" class="site-logo" onerror="this.style.display='none'">
+    <header id="accueil" class="hero">
 
-        <h1>Physique-Chimie Collège</h1>
+        <video class="hero-bg-video" autoplay muted loop playsinline>
+            <source src="background.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
 
-        <p>
-            Plateforme pédagogique destinée aux élèves du collège pour apprendre,
-            réviser et s’entraîner en physique-chimie à travers des cours,
-            exercices, corrigés et ressources numériques.
-        </p>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <img src="logo.png" alt="Logo Physique-Chimie Collège" class="site-logo" onerror="this.style.display='none'">
+
+            <h1>Physique-Chimie Collège</h1>
+
+            <p>
+                Plateforme pédagogique destinée aux élèves du collège pour apprendre,
+                réviser et s’entraîner en physique-chimie à travers des cours,
+                exercices, corrigés et ressources numériques.
+            </p>
+        </div>
+
     </header>
 
-    <section id="accueil">
-        <h2>Accueil</h2>
+    <main class="container">
 
-        <div class="intro">
-            <p>
-                Ce site web a été conçu comme un espace d’apprentissage simple,
-                organisé et accessible. Il vise à accompagner les élèves du collège
-                dans la compréhension des notions essentielles en physique-chimie.
-            </p>
+        <section>
+            <h2>Accueil</h2>
 
-            <p>
-                Les élèves peuvent y trouver des cours structurés, des résumés,
-                des exercices d’application, des corrigés et des documents PDF
-                pour faciliter la révision et l’apprentissage autonome.
-            </p>
-        </div>
-    </section>
-
-    <section id="cours">
-        <h2>Cours de physique-chimie</h2>
-
-        <div class="cards">
-
-            <div class="card">
-                <h3>1ère année collège</h3>
+            <div class="box">
                 <p>
-                    Cours simples et progressifs pour découvrir les bases de la matière,
-                    de l’eau, de l’air, des mesures et de l’électricité.
+                    Ce site web a été conçu comme un espace d’apprentissage simple,
+                    organisé et accessible. Il vise à accompagner les élèves du collège
+                    dans la compréhension des notions essentielles en physique-chimie.
                 </p>
-                <a href="1ac.html" class="btn">Voir les cours</a>
-            </div>
 
-            <div class="card">
-                <h3>2ème année collège</h3>
                 <p>
-                    Cours sur l’air, les atomes, les molécules, les réactions chimiques,
-                    la lumière, l’optique et l’électricité.
-                </p>
-                <a href="2ac.html" class="btn">Voir les cours</a>
-            </div>
-
-            <div class="card">
-                <h3>3ème année collège</h3>
-                <p>
-                    Cours sur les matériaux, les ions, les réactions chimiques,
-                    la mécanique, les forces, l’électricité et les examens.
-                </p>
-                <a href="3ac.html" class="btn">Voir les cours</a>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="exercices">
-        <h2>Exercices</h2>
-
-        <div class="cards">
-
-            <div class="card">
-                <h3>Exercices d’application</h3>
-                <p>
-                    Des exercices courts pour vérifier la compréhension immédiate
-                    de chaque leçon.
+                    Les élèves peuvent y trouver des cours structurés, des résumés,
+                    des exercices d’application, des corrigés et des documents PDF
+                    pour faciliter la révision et l’apprentissage autonome.
                 </p>
             </div>
+        </section>
 
-            <div class="card">
-                <h3>Exercices de synthèse</h3>
+        <section id="cours">
+            <h2>Cours par niveau</h2>
+
+            <div class="levels">
+                <div class="level-card">
+                    <h3>1AC</h3>
+                    <p>
+                        Cours de physique-chimie pour la première année du collège :
+                        matière, eau, volume, masse, électricité et sécurité.
+                    </p>
+                    <a href="1ac.html" class="btn">Voir les cours 1AC</a>
+                </div>
+
+                <div class="level-card">
+                    <h3>2AC</h3>
+                    <p>
+                        Cours de physique-chimie pour la deuxième année du collège :
+                        air, molécules, atomes, réactions chimiques, lumière et électricité.
+                    </p>
+                    <a href="2ac.html" class="btn">Voir les cours 2AC</a>
+                </div>
+
+                <div class="level-card">
+                    <h3>3AC</h3>
+                    <p>
+                        Cours de physique-chimie pour la troisième année du collège :
+                        matériaux, ions, oxydation, solutions, forces, mouvement et électricité.
+                    </p>
+                    <a href="3ac.html" class="btn">Voir les cours 3AC</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="exercices">
+            <h2>Exercices</h2>
+
+            <div class="box">
                 <p>
-                    Des activités plus complètes pour relier plusieurs notions
-                    du programme.
+                    Chaque cours contient des exercices d’application permettant aux élèves
+                    de vérifier leur compréhension et de s’entraîner progressivement.
+                </p>
+
+                <p>
+                    Les exercices sont proposés avec des consignes simples et adaptées
+                    au niveau du collège.
                 </p>
             </div>
+        </section>
 
-            <div class="card">
-                <h3>Préparation aux contrôles</h3>
+        <section id="corriges">
+            <h2>Corrigés</h2>
+
+            <div class="box">
                 <p>
-                    Des sujets d’entraînement pour préparer les devoirs surveillés
-                    et les examens.
+                    Les corrigés accompagnent les exercices afin d’aider les élèves
+                    à comprendre leurs erreurs et à améliorer leurs méthodes de résolution.
+                </p>
+
+                <p>
+                    Les corrections sont présentées de manière claire, étape par étape,
+                    pour faciliter la révision autonome.
                 </p>
             </div>
+        </section>
 
-        </div>
-    </section>
+        <section id="ressources">
+            <h2>Ressources numériques</h2>
 
-    <section id="corriges">
-        <h2>Corrigés</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>Documents PDF</h3>
+                    <p>
+                        Des fichiers PDF sont intégrés dans les pages de cours pour permettre
+                        la consultation directe et le téléchargement.
+                    </p>
+                </div>
 
-        <div class="intro">
-            <p>
-                Les corrigés permettent aux élèves de comparer leurs réponses,
-                d’identifier leurs erreurs et de progresser de manière autonome.
-            </p>
+                <div class="feature-card">
+                    <h3>Résumés structurés</h3>
+                    <p>
+                        Chaque leçon contient un résumé avec les notions importantes
+                        à retenir pour la révision.
+                    </p>
+                </div>
 
-            <p>
-                Chaque corrigé est présenté de façon claire pour aider l’élève
-                à comprendre la méthode de résolution.
-            </p>
-        </div>
-    </section>
+                <div class="feature-card">
+                    <h3>Exercices corrigés</h3>
+                    <p>
+                        Les exercices corrigés permettent aux élèves de s’entraîner
+                        et d’évaluer leurs acquis.
+                    </p>
+                </div>
 
-    <section id="ressources">
-        <h2>Ressources pédagogiques</h2>
-
-        <div class="cards">
-
-            <div class="card">
-                <h3>Fiches de résumé</h3>
-                <p>
-                    Des fiches claires pour retenir les notions essentielles
-                    de chaque cours.
-                </p>
+                <div class="feature-card">
+                    <h3>Révision autonome</h3>
+                    <p>
+                        Le site aide les élèves à apprendre à leur rythme grâce à une organisation
+                        simple par niveau, semestre et leçon.
+                    </p>
+                </div>
             </div>
+        </section>
 
-            <div class="card">
-                <h3>Documents PDF</h3>
-                <p>
-                    Des documents téléchargeables pour consulter les cours
-                    hors connexion.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>Simulations et vidéos</h3>
-                <p>
-                    Des ressources numériques pour observer, manipuler virtuellement
-                    et mieux comprendre les phénomènes scientifiques.
-                </p>
-            </div>
-
-        </div>
-    </section>
+    </main>
 
     <footer>
-        <p>© 2026 - Physique-Chimie Collège | Projet pédagogique numérique</p>
+        <p>© 2026 - Physique-Chimie Collège | Cours, exercices et corrigés</p>
     </footer>
 
     <script>
