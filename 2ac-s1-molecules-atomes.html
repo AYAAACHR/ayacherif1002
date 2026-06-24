@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les molécules et les atomes</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f4c81, #1abc9c);
+            color: white;
+            padding: 45px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 17px;
+        }
+
+        nav {
+            background-color: #083b66;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #1abc9c;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            color: #0f4c81;
+            margin: 30px 0 15px;
+            border-left: 5px solid #1abc9c;
+            padding-left: 10px;
+            font-size: 26px;
+        }
+
+        h3 {
+            color: #0f4c81;
+            margin-bottom: 10px;
+        }
+
+        .box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+
+        .definition {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .important {
+            background-color: #fff7e6;
+            border-left: 5px solid #f39c12;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .resume {
+            background-color: #eef4ff;
+            border-left: 5px solid #0f4c81;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .pdf-box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            height: 750px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #0f4c81;
+            color: white;
+        }
+
+        .formula {
+            text-align: center;
+            font-size: 22px;
+            color: #083b66;
+            font-weight: bold;
+            margin: 20px 0;
+            background-color: #eef4ff;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 10px 10px 0 0;
+            background-color: #1abc9c;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #14977d;
+        }
+
+        footer {
+            background-color: #083b66;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Les molécules et les atomes</h1>
+        <p>2ème année collège - Semestre 1 | Cours, PDF, résumé et exercices</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="2ac.html">Cours 2AC</a>
+        <a href="#presentation">Présentation</a>
+        <a href="#pdf">PDF du cours</a>
+        <a href="#lecon">Leçon</a>
+        <a href="#resume">Résumé</a>
+        <a href="#exercices">Exercices</a>
+    </nav>
+
+    <div class="container">
+
+        <section id="presentation">
+            <h2>Présentation du cours</h2>
+
+            <div class="box">
+                <p>
+                    Ce cours présente la notion d’atome, la notion de molécule,
+                    les symboles chimiques, les formules chimiques, ainsi que la différence
+                    entre un corps pur simple et un corps pur composé. Il explique aussi
+                    le modèle moléculaire de l’air.
+                </p>
+
+                <div class="definition">
+                    <strong>Objectif du cours :</strong>
+                    comprendre que la matière est constituée d’atomes et de molécules,
+                    savoir lire une formule chimique simple et distinguer un corps pur simple
+                    d’un corps pur composé.
+                </div>
+            </div>
+        </section>
+
+        <section id="pdf">
+            <h2>Document PDF du cours</h2>
+
+            <div class="pdf-box">
+                <p>
+                    Vous pouvez consulter le PDF directement sur cette page,
+                    l’ouvrir dans un nouvel onglet ou le télécharger.
+                </p>
+
+                <a href="./2ac-s1-molecules-atomes.pdf" target="_blank" class="btn">Ouvrir le PDF</a>
+                <a href="./2ac-s1-molecules-atomes.pdf" download class="btn">Télécharger le PDF</a>
+
+                <iframe src="./2ac-s1-molecules-atomes.pdf" class="pdf-viewer"></iframe>
+            </div>
+        </section>
+
+        <section id="lecon">
+            <h2>1. Introduction</h2>
+
+            <div class="box">
+                <p>
+                    Lorsque l’on coupe la matière en morceaux de plus en plus petits,
+                    on finit par atteindre une très petite particule qui constitue la matière.
+                    Cette particule est appelée <strong>atome</strong>.
+                </p>
+
+                <div class="important">
+                    <strong>Question de départ :</strong>
+                    comment s’appelle la plus petite unité qui constitue toute la matière ?
+                </div>
+            </div>
+
+            <h2>2. L’atome</h2>
+
+            <div class="box">
+                <h3>2.1. Notion d’atome</h3>
+
+                <p>
+                    Un atome est une très petite particule qui constitue la matière.
+                    Toute la matière qui nous entoure est formée d’atomes.
+                </p>
+
+                <div class="definition">
+                    <strong>Définition :</strong>
+                    un atome est la plus petite particule de matière qui entre dans
+                    la constitution des corps.
+                </div>
+
+                <ul>
+                    <li>Les atomes sont extrêmement petits.</li>
+                    <li>Ils ne sont pas visibles à l’œil nu.</li>
+                    <li>Ils ne peuvent pas être observés avec un microscope ordinaire.</li>
+                    <li>La taille d’un atome est de l’ordre de 10<sup>-10</sup> m.</li>
+                    <li>La masse d’un atome est de l’ordre de 10<sup>-26</sup> kg.</li>
+                </ul>
+            </div>
+
+            <h2>3. Symboles et représentations des atomes</h2>
+
+            <div class="box">
+                <p>
+                    Chaque atome est représenté par un symbole chimique.
+                    Le symbole est souvent la première lettre du nom de l’atome en majuscule.
+                    Parfois, on ajoute une deuxième lettre en minuscule pour éviter la confusion.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Atome</th>
+                        <th>Symbole</th>
+                        <th>Représentation simplifiée</th>
+                    </tr>
+                    <tr>
+                        <td>Hydrogène</td>
+                        <td>H</td>
+                        <td>Boule blanche</td>
+                    </tr>
+                    <tr>
+                        <td>Oxygène</td>
+                        <td>O</td>
+                        <td>Boule rouge</td>
+                    </tr>
+                    <tr>
+                        <td>Azote</td>
+                        <td>N</td>
+                        <td>Boule bleue</td>
+                    </tr>
+                    <tr>
+                        <td>Carbone</td>
+                        <td>C</td>
+                        <td>Boule noire</td>
+                    </tr>
+                    <tr>
+                        <td>Chlore</td>
+                        <td>Cl</td>
+                        <td>Boule verte</td>
+                    </tr>
+                </table>
+
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    le symbole chimique commence toujours par une lettre majuscule.
+                    S’il contient deux lettres, la deuxième est écrite en minuscule.
+                </div>
+            </div>
+
+            <h2>4. La molécule</h2>
+
+            <div class="box">
+                <p>
+                    Une molécule est formée par l’association de plusieurs atomes.
+                    Ces atomes peuvent être identiques ou différents.
+                </p>
+
+                <div class="definition">
+                    <strong>Définition :</strong>
+                    une molécule est un regroupement de plusieurs atomes identiques
+                    ou différents liés entre eux.
+                </div>
+
+                <p>
+                    Chaque molécule est représentée par une formule chimique.
+                    Cette formule indique les symboles des atomes présents dans la molécule
+                    ainsi que leur nombre.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Molécule</th>
+                        <th>Formule chimique</th>
+                        <th>Composition</th>
+                    </tr>
+                    <tr>
+                        <td>Dioxygène</td>
+                        <td>O<sub>2</sub></td>
+                        <td>2 atomes d’oxygène</td>
+                    </tr>
+                    <tr>
+                        <td>Dihydrogène</td>
+                        <td>H<sub>2</sub></td>
+                        <td>2 atomes d’hydrogène</td>
+                    </tr>
+                    <tr>
+                        <td>Diazote</td>
+                        <td>N<sub>2</sub></td>
+                        <td>2 atomes d’azote</td>
+                    </tr>
+                    <tr>
+                        <td>Eau</td>
+                        <td>H<sub>2</sub>O</td>
+                        <td>2 atomes d’hydrogène et 1 atome d’oxygène</td>
+                    </tr>
+                    <tr>
+                        <td>Dioxyde de carbone</td>
+                        <td>CO<sub>2</sub></td>
+                        <td>1 atome de carbone et 2 atomes d’oxygène</td>
+                    </tr>
+                    <tr>
+                        <td>Méthane</td>
+                        <td>CH<sub>4</sub></td>
+                        <td>1 atome de carbone et 4 atomes d’hydrogène</td>
+                    </tr>
+                </table>
+
+                <div class="important">
+                    <strong>Remarque :</strong>
+                    le petit chiffre placé en bas à droite du symbole s’appelle un indice.
+                    Il indique le nombre d’atomes de cette sorte dans la molécule.
+                </div>
+            </div>
+
+            <h2>5. Corps pur simple et corps pur composé</h2>
+
+            <div class="box">
+                <h3>5.1. Corps pur simple</h3>
+
+                <p>
+                    Un corps pur simple est constitué de molécules formées d’une seule sorte d’atomes.
+                </p>
+
+                <div class="definition">
+                    <strong>Définition :</strong>
+                    un corps pur simple est un corps pur dont les molécules sont constituées
+                    d’une seule sorte d’atomes.
+                </div>
+
+                <p>Exemples :</p>
+
+                <ul>
+                    <li>Dioxygène : O<sub>2</sub></li>
+                    <li>Dihydrogène : H<sub>2</sub></li>
+                    <li>Diazote : N<sub>2</sub></li>
+                    <li>Chlore : Cl<sub>2</sub></li>
+                    <li>Ozone : O<sub>3</sub></li>
+                </ul>
+
+                <h3>5.2. Corps pur composé</h3>
+
+                <p>
+                    Un corps pur composé est constitué de molécules formées de plusieurs
+                    sortes d’atomes.
+                </p>
+
+                <div class="definition">
+                    <strong>Définition :</strong>
+                    un corps pur composé est un corps pur dont les molécules sont constituées
+                    de deux ou plusieurs sortes d’atomes.
+                </div>
+
+                <p>Exemples :</p>
+
+                <ul>
+                    <li>Eau : H<sub>2</sub>O</li>
+                    <li>Dioxyde de carbone : CO<sub>2</sub></li>
+                    <li>Méthane : CH<sub>4</sub></li>
+                    <li>Monoxyde de carbone : CO</li>
+                    <li>Butane : C<sub>4</sub>H<sub>10</sub></li>
+                </ul>
+            </div>
+
+            <h2>6. Le modèle moléculaire de l’air</h2>
+
+            <div class="box">
+                <p>
+                    L’air est un mélange de plusieurs gaz. Il est constitué principalement
+                    de diazote et de dioxygène.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Gaz</th>
+                        <th>Formule</th>
+                        <th>Pourcentage approximatif</th>
+                    </tr>
+                    <tr>
+                        <td>Diazote</td>
+                        <td>N<sub>2</sub></td>
+                        <td>78 %</td>
+                    </tr>
+                    <tr>
+                        <td>Dioxygène</td>
+                        <td>O<sub>2</sub></td>
+                        <td>21 %</td>
+                    </tr>
+                    <tr>
+                        <td>Autres gaz</td>
+                        <td>CO<sub>2</sub>, vapeur d’eau, ozone, méthane...</td>
+                        <td>1 %</td>
+                    </tr>
+                </table>
+
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    dans l’air, il y a environ quatre fois plus de molécules de diazote
+                    que de molécules de dioxygène.
+                </div>
+            </div>
+        </section>
+
+        <section id="resume">
+            <h2>Résumé du cours</h2>
+
+            <div class="resume">
+                <ul>
+                    <li>Toute la matière est constituée d’atomes.</li>
+                    <li>Un atome est une très petite particule de matière.</li>
+                    <li>Chaque atome possède un symbole chimique.</li>
+                    <li>Une molécule est un regroupement de plusieurs atomes liés entre eux.</li>
+                    <li>Une formule chimique indique la nature et le nombre des atomes d’une molécule.</li>
+                    <li>Un corps pur simple contient une seule sorte d’atomes.</li>
+                    <li>Un corps pur composé contient plusieurs sortes d’atomes.</li>
+                    <li>L’air est un mélange de molécules de diazote, de dioxygène et d’autres gaz.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="exercices">
+            <h2>Exercices d’application</h2>
+
+            <div class="box">
+                <h3>Exercice 1 : Compléter les phrases</h3>
+
+                <p>
+                    Complète avec les mots suivants :
+                    <strong>atomes - molécules - symbole atomique - simple - composé - sphères - majuscule</strong>.
+                </p>
+
+                <ol>
+                    <li>Chaque type d’atome est représenté par un __________ : en général, la première lettre du nom en __________.</li>
+                    <li>Une molécule est constituée par au moins deux __________ liés entre eux.</li>
+                    <li>Les atomes et les __________ sont modélisés par des __________ de taille et de couleur différentes.</li>
+                    <li>Un corps pur __________ est un corps pur dont les molécules sont composées d’atomes identiques.</li>
+                    <li>Un corps pur __________ est un corps pur dont les molécules sont composées d’atomes différents.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 2 : Classer les molécules</h3>
+
+                <p>
+                    Classe les molécules suivantes en corps purs simples et corps purs composés :
+                </p>
+
+                <p>
+                    <strong>Cl<sub>2</sub>, CO<sub>2</sub>, CH<sub>4</sub>, O<sub>3</sub>, NH<sub>3</sub>, N<sub>2</sub>H<sub>4</sub></strong>
+                </p>
+
+                <ul>
+                    <li>Corps purs simples : ........................................................</li>
+                    <li>Corps purs composés : .......................................................</li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 3 : Lire une formule chimique</h3>
+
+                <ol>
+                    <li>Donner la composition de la molécule H<sub>2</sub>O.</li>
+                    <li>Donner la composition de la molécule CO<sub>2</sub>.</li>
+                    <li>Donner la composition de la molécule CH<sub>4</sub>.</li>
+                    <li>Dire si ces molécules sont des corps purs simples ou composés.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 4 : Modèle moléculaire de l’air</h3>
+
+                <ol>
+                    <li>Quels sont les deux principaux gaz de l’air ?</li>
+                    <li>Quelle est la formule chimique du dioxygène ?</li>
+                    <li>Quelle est la formule chimique du diazote ?</li>
+                    <li>Pourquoi dit-on que l’air est un mélange ?</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="corrige">
+            <h2>Corrigé indicatif</h2>
+
+            <div class="box">
+                <h3>Correction de l’exercice 1</h3>
+
+                <ol>
+                    <li>symbole atomique - majuscule</li>
+                    <li>atomes</li>
+                    <li>molécules - sphères</li>
+                    <li>simple</li>
+                    <li>composé</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 2</h3>
+
+                <ul>
+                    <li><strong>Corps purs simples :</strong> Cl<sub>2</sub>, O<sub>3</sub></li>
+                    <li><strong>Corps purs composés :</strong> CO<sub>2</sub>, CH<sub>4</sub>, NH<sub>3</sub>, N<sub>2</sub>H<sub>4</sub></li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 3</h3>
+
+                <ol>
+                    <li>H<sub>2</sub>O contient 2 atomes d’hydrogène et 1 atome d’oxygène.</li>
+                    <li>CO<sub>2</sub> contient 1 atome de carbone et 2 atomes d’oxygène.</li>
+                    <li>CH<sub>4</sub> contient 1 atome de carbone et 4 atomes d’hydrogène.</li>
+                    <li>Ces molécules sont des corps purs composés.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 4</h3>
+
+                <ol>
+                    <li>Les deux principaux gaz de l’air sont le diazote et le dioxygène.</li>
+                    <li>La formule du dioxygène est O<sub>2</sub>.</li>
+                    <li>La formule du diazote est N<sub>2</sub>.</li>
+                    <li>L’air est un mélange car il contient plusieurs gaz différents.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="navigation">
+            <h2>Navigation</h2>
+
+            <div class="box">
+                <a href="2ac-s1-proprietes-air-constituants.html" class="btn">Cours précédent</a>
+                <a href="2ac.html" class="btn">Retour aux cours de 2ème année</a>
+                <a href="index.html" class="btn">Retour à l’accueil</a>
+                <a href="2ac-s1-combustions.html" class="btn">Cours suivant</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 - Physique-Chimie Collège | Les molécules et les atomes</p>
+    </footer>
+
+</body>
+</html>
