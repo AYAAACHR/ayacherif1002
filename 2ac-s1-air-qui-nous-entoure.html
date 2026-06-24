@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L’air qui nous entoure</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f4c81, #1abc9c);
+            color: white;
+            padding: 45px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 17px;
+        }
+
+        nav {
+            background-color: #083b66;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #1abc9c;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            color: #0f4c81;
+            margin: 30px 0 15px;
+            border-left: 5px solid #1abc9c;
+            padding-left: 10px;
+            font-size: 26px;
+        }
+
+        h3 {
+            color: #0f4c81;
+            margin-bottom: 10px;
+        }
+
+        .box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+
+        .definition {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .important {
+            background-color: #fff7e6;
+            border-left: 5px solid #f39c12;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .resume {
+            background-color: #eef4ff;
+            border-left: 5px solid #0f4c81;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .pdf-box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            height: 750px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #0f4c81;
+            color: white;
+        }
+
+        .schema {
+            background-color: #f8fbff;
+            border: 1px dashed #9ab6d6;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .schema-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .schema-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            min-width: 210px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .arrow {
+            font-size: 28px;
+            font-weight: bold;
+            color: #0f4c81;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 10px 10px 0 0;
+            background-color: #1abc9c;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #14977d;
+        }
+
+        footer {
+            background-color: #083b66;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>L’air qui nous entoure</h1>
+        <p>2ème année collège - Semestre 1 | Cours, PDF, résumé et exercices</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="2ac.html">Cours 2AC</a>
+        <a href="#presentation">Présentation</a>
+        <a href="#pdf">PDF du cours</a>
+        <a href="#lecon">Leçon</a>
+        <a href="#resume">Résumé</a>
+        <a href="#exercices">Exercices</a>
+    </nav>
+
+    <div class="container">
+
+        <section id="presentation">
+            <h2>Présentation du cours</h2>
+
+            <div class="box">
+                <p>
+                    Ce cours présente l’atmosphère, ses couches principales,
+                    leurs caractéristiques et leurs rôles. Il explique aussi comment
+                    les mouvements de l’air donnent naissance au vent.
+                </p>
+
+                <div class="definition">
+                    <strong>Objectif du cours :</strong>
+                    comprendre le rôle de l’atmosphère dans la vie sur Terre,
+                    reconnaître ses couches et expliquer la formation du vent à partir
+                    des différences de température et de pression.
+                </div>
+            </div>
+        </section>
+
+        <section id="pdf">
+            <h2>Document PDF du cours</h2>
+
+            <div class="pdf-box">
+                <p>
+                    Vous pouvez consulter le PDF directement sur cette page,
+                    l’ouvrir dans un nouvel onglet ou le télécharger.
+                </p>
+
+                <a href="./2ac-s1-air-qui-nous-entoure.pdf" target="_blank" class="btn">Ouvrir le PDF</a>
+                <a href="./2ac-s1-air-qui-nous-entoure.pdf" download class="btn">Télécharger le PDF</a>
+
+                <iframe src="./2ac-s1-air-qui-nous-entoure.pdf" class="pdf-viewer"></iframe>
+            </div>
+        </section>
+
+        <section id="lecon">
+            <h2>1. Introduction</h2>
+
+            <div class="box">
+                <p>
+                    L’atmosphère est l’enveloppe gazeuse qui entoure notre planète.
+                    Elle s’étend sur plusieurs centaines de kilomètres d’épaisseur.
+                </p>
+
+                <div class="definition">
+                    <strong>Définition :</strong>
+                    l’atmosphère est la couche d’air qui entoure la Terre.
+                </div>
+
+                <p>L’atmosphère est indispensable à la vie car :</p>
+
+                <ul>
+                    <li>elle apporte le dioxygène nécessaire à la respiration des êtres vivants ;</li>
+                    <li>elle maintient une température favorable au développement de la vie ;</li>
+                    <li>la couche d’ozone absorbe une partie des rayons solaires dangereux, surtout les rayons ultraviolets.</li>
+                </ul>
+            </div>
+
+            <h2>2. Les couches de l’atmosphère</h2>
+
+            <div class="box">
+                <p>
+                    On distingue dans l’atmosphère plusieurs couches successives.
+                    Les principales couches étudiées sont :
+                </p>
+
+                <ul>
+                    <li>la troposphère ;</li>
+                    <li>la stratosphère ;</li>
+                    <li>la mésosphère ;</li>
+                    <li>la thermosphère et l’exosphère.</li>
+                </ul>
+
+                <table>
+                    <tr>
+                        <th>Couche</th>
+                        <th>Caractéristiques</th>
+                        <th>Rôle</th>
+                    </tr>
+                    <tr>
+                        <td>Troposphère</td>
+                        <td>
+                            C’est la couche où nous vivons. Son épaisseur est d’environ
+                            15 km. La température diminue quand on s’éloigne du sol.
+                        </td>
+                        <td>
+                            Elle contient environ 90 % de l’air de l’atmosphère et presque
+                            toute la vapeur d’eau. Elle est le siège des phénomènes
+                            météorologiques : vent, nuages, pluie, tonnerre et éclairs.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Stratosphère</td>
+                        <td>
+                            Elle a une épaisseur d’environ 40 km. La température y augmente
+                            progressivement.
+                        </td>
+                        <td>
+                            Elle contient la couche d’ozone qui absorbe une partie des rayons
+                            ultraviolets dangereux.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Mésosphère</td>
+                        <td>
+                            Elle a une épaisseur d’environ 35 km. C’est la couche la plus froide
+                            de l’atmosphère.
+                        </td>
+                        <td>
+                            Elle protège la Terre de la chute de nombreux météorites venant
+                            de l’espace.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Thermosphère et exosphère</td>
+                        <td>
+                            Les températures y sont très élevées et peuvent dépasser 500 °C.
+                        </td>
+                        <td>
+                            Elles réfléchissent certaines ondes radio et accueillent certains
+                            satellites d’observation.
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    la troposphère est la couche la plus proche de la Terre et celle où
+                    se produisent la plupart des phénomènes météorologiques.
+                </div>
+            </div>
+
+            <h2>3. Mouvement de l’air dans l’atmosphère</h2>
+
+            <div class="box">
+                <p>
+                    L’air peut se déplacer verticalement ou horizontalement. Ces mouvements
+                    sont liés aux différences de température et de pression.
+                </p>
+
+                <h3>Expérience 1 : air chaud</h3>
+                <p>
+                    Lorsqu’on allume des bougies sous un carillon, l’air se réchauffe.
+                    L’air chaud devient plus léger et monte vers le haut. Ce mouvement
+                    d’air crée un courant qui fait tourner le carillon.
+                </p>
+
+                <div class="definition">
+                    <strong>Conclusion :</strong>
+                    l’air chaud monte parce qu’il devient moins dense que l’air froid.
+                </div>
+
+                <h3>Expérience 2 : air en mouvement horizontal</h3>
+                <p>
+                    Lorsqu’on souffle entre deux boîtes légères, elles se rapprochent.
+                    Le souffle crée une zone de basse pression entre les deux boîtes,
+                    ce qui provoque leur rapprochement.
+                </p>
+
+                <div class="definition">
+                    <strong>Conclusion :</strong>
+                    le mouvement horizontal de l’air peut être provoqué par une différence
+                    de pression.
+                </div>
+            </div>
+
+            <h2>4. Naissance du vent</h2>
+
+            <div class="box">
+                <p>
+                    Quand la température augmente dans une zone, l’air s’échauffe,
+                    devient moins dense et monte. La pression diminue au niveau du sol :
+                    cette zone est appelée <strong>dépression</strong>.
+                </p>
+
+                <p>
+                    Quand la température diminue, l’air se refroidit, devient plus dense
+                    et descend. La pression augmente au niveau du sol : cette zone est
+                    appelée <strong>anticyclone</strong>.
+                </p>
+
+                <div class="schema">
+                    <h3>Schéma simplifié de la naissance du vent</h3>
+
+                    <div class="schema-row">
+                        <div class="schema-card">
+                            <strong>Anticyclone (A)</strong><br>
+                            Air froid descend<br>
+                            Haute pression
+                        </div>
+
+                        <div class="arrow">→ vent →</div>
+
+                        <div class="schema-card">
+                            <strong>Dépression (D)</strong><br>
+                            Air chaud monte<br>
+                            Basse pression
+                        </div>
+                    </div>
+                </div>
+
+                <div class="definition">
+                    <strong>Définition :</strong>
+                    le vent est un mouvement horizontal de l’air d’une zone de haute pression
+                    vers une zone de basse pression.
+                </div>
+
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    le vent diverge à partir du centre d’un anticyclone et converge vers
+                    le centre d’une dépression.
+                </div>
+            </div>
+        </section>
+
+        <section id="resume">
+            <h2>Résumé du cours</h2>
+
+            <div class="resume">
+                <ul>
+                    <li>L’atmosphère est l’enveloppe gazeuse qui entoure la Terre.</li>
+                    <li>Elle est indispensable à la vie car elle contient le dioxygène et protège la Terre.</li>
+                    <li>Les principales couches sont : troposphère, stratosphère, mésosphère, thermosphère et exosphère.</li>
+                    <li>La troposphère est la couche où nous vivons.</li>
+                    <li>La stratosphère contient la couche d’ozone.</li>
+                    <li>L’air chaud monte parce qu’il devient moins dense.</li>
+                    <li>L’air froid descend parce qu’il est plus dense.</li>
+                    <li>Le vent est un déplacement horizontal de l’air d’une zone de haute pression vers une zone de basse pression.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="exercices">
+            <h2>Exercices d’application</h2>
+
+            <div class="box">
+                <h3>Exercice 1 : Questions de cours</h3>
+                <ol>
+                    <li>Donner les noms des couches principales de l’atmosphère.</li>
+                    <li>Dans quelle couche de l’atmosphère vivons-nous ?</li>
+                    <li>Quel est le rôle de l’atmosphère ?</li>
+                    <li>Comment le vent naît-il ?</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 2 : Compléter les phrases</h3>
+                <p>
+                    Complète avec les mots suivants :
+                    <strong>basse pression - chaud - plus dense - vent - haute pression - descend - moins dense</strong>.
+                </p>
+                <ol>
+                    <li>L’air froid est __________ que l’air chaud.</li>
+                    <li>L’air chaud est __________ et monte vers le haut.</li>
+                    <li>L’air froid __________ et crée une zone de __________.</li>
+                    <li>Le déplacement horizontal de l’air est appelé __________.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 3 : Vrai ou faux</h3>
+                <ol>
+                    <li>Les mouvements des masses d’air sont à l’origine des vents.</li>
+                    <li>L’air chaud descend vers le sol.</li>
+                    <li>Le vent est le déplacement horizontal des masses d’air.</li>
+                    <li>Une zone de haute pression est appelée anticyclone.</li>
+                    <li>Une zone de basse pression est appelée dépression.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 4 : Situation</h3>
+                <p>
+                    Une montgolfière contient de l’air chauffé par un brûleur.
+                </p>
+                <ol>
+                    <li>Pourquoi la montgolfière s’envole-t-elle lorsque l’air est chauffé ?</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="corrige">
+            <h2>Corrigé indicatif</h2>
+
+            <div class="box">
+                <h3>Correction de l’exercice 1</h3>
+                <ol>
+                    <li>Troposphère, stratosphère, mésosphère, thermosphère et exosphère.</li>
+                    <li>Nous vivons dans la troposphère.</li>
+                    <li>L’atmosphère apporte le dioxygène, maintient une température favorable et protège contre certains rayons solaires dangereux.</li>
+                    <li>Le vent naît à cause d’une différence de pression entre deux zones.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 2</h3>
+                <ol>
+                    <li>plus dense</li>
+                    <li>moins dense</li>
+                    <li>descend - haute pression</li>
+                    <li>vent</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 3</h3>
+                <ol>
+                    <li>Vrai</li>
+                    <li>Faux</li>
+                    <li>Vrai</li>
+                    <li>Vrai</li>
+                    <li>Vrai</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 4</h3>
+                <p>
+                    La montgolfière s’envole parce que l’air chauffé devient plus léger,
+                    donc moins dense, et monte vers le haut.
+                </p>
+            </div>
+        </section>
+
+        <section id="navigation">
+            <h2>Navigation</h2>
+
+            <div class="box">
+                <a href="2ac.html" class="btn">Retour aux cours de 2ème année</a>
+                <a href="index.html" class="btn">Retour à l’accueil</a>
+                <a href="2ac-s1-proprietes-air-constituants.html" class="btn">Cours suivant</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 - Physique-Chimie Collège | L’air qui nous entoure</p>
+    </footer>
+
+</body>
+</html>
