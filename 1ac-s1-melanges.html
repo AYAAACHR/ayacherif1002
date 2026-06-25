@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les mélanges - 1AC</title>
+
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        header.hero {
+            position: relative;
+            color: white;
+            padding: 70px 20px;
+            text-align: center;
+            overflow: hidden;
+            min-height: 430px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                135deg,
+                rgba(15, 76, 129, 0.80),
+                rgba(26, 188, 156, 0.68)
+            );
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .site-logo {
+            width: 95px;
+            height: 95px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            background-color: white;
+            padding: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+        }
+
+        header h1 {
+            font-size: 34px;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        header p {
+            font-size: 17px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        nav {
+            background-color: #083b66;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #1abc9c;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            color: #0f4c81;
+            margin: 30px 0 15px;
+            border-left: 5px solid #1abc9c;
+            padding-left: 10px;
+            font-size: 26px;
+        }
+
+        h3 {
+            color: #0f4c81;
+            margin: 20px 0 10px;
+        }
+
+        .box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+
+        .definition {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .important {
+            background-color: #fff7e6;
+            border-left: 5px solid #f39c12;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .resume {
+            background-color: #eef4ff;
+            border-left: 5px solid #0f4c81;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .pdf-box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            height: 750px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #0f4c81;
+            color: white;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #eef4ff;
+            color: #083b66;
+            padding: 6px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin: 5px 5px 5px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 10px 10px 0 0;
+            background-color: #1abc9c;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #14977d;
+        }
+
+        footer {
+            background-color: #083b66;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            header.hero {
+                min-height: 360px;
+                padding: 55px 15px;
+            }
+
+            .hero-bg-video {
+                width: auto;
+                height: 100%;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            header p {
+                font-size: 15px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 6px;
+                font-size: 14px;
+            }
+
+            .pdf-viewer {
+                height: 520px;
+            }
+
+            .container {
+                padding: 30px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="hero">
+
+        <video class="hero-bg-video" autoplay muted loop playsinline>
+            <source src="background.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <img src="logo.png" alt="Logo Physique-Chimie Collège" class="site-logo" onerror="this.style.display='none'">
+
+            <h1>Les mélanges</h1>
+            <p>1ère année collège - Semestre 1 | Cours, PDF, résumé, exercices et corrigés</p>
+        </div>
+
+    </header>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="1ac.html">Cours 1AC</a>
+        <a href="#presentation">Présentation</a>
+        <a href="#pdf">PDF du cours</a>
+        <a href="#lecon">Leçon</a>
+        <a href="#resume">Résumé</a>
+        <a href="#exercices">Exercices</a>
+        <a href="#corrige">Corrigés</a>
+    </nav>
+
+    <div class="container">
+
+        <section id="presentation">
+            <h2>Présentation du cours</h2>
+
+            <div class="box">
+                <p>
+                    Ce cours présente la notion de mélange, les différents types de mélanges
+                    et l’étude de quelques mélanges fréquents : l’eau et l’alcool,
+                    l’eau et l’huile, ainsi que les mélanges de liquide et de gaz.
+                </p>
+
+                <div class="definition">
+                    <strong>Objectif du cours :</strong>
+                    comprendre qu’un mélange est constitué de plusieurs corps purs,
+                    distinguer un mélange homogène d’un mélange hétérogène,
+                    et utiliser correctement les notions de constituants, phase,
+                    miscibilité, non-miscibilité et émulsion.
+                </div>
+            </div>
+        </section>
+
+        <section id="pdf">
+            <h2>Document PDF du cours</h2>
+
+            <div class="pdf-box">
+                <p>
+                    Vous pouvez consulter le document PDF directement sur cette page,
+                    l’ouvrir dans un nouvel onglet ou le télécharger.
+                </p>
+
+                <a href="./1ac-s1-melanges.pdf" target="_blank" class="btn">Ouvrir le PDF</a>
+                <a href="./1ac-s1-melanges.pdf" download class="btn">Télécharger le PDF</a>
+
+                <iframe src="./1ac-s1-melanges.pdf" class="pdf-viewer"></iframe>
+            </div>
+        </section>
+
+        <section id="lecon">
+
+            <h2>1. Notion de mélange</h2>
+
+            <div class="box">
+                <p>
+                    Un mélange est constitué d’au moins deux corps purs. Il contient donc
+                    au moins deux types de particules différentes.
+                </p>
+
+                <p>
+                    Un mélange peut être formé d’un liquide et d’un solide, d’un liquide
+                    et d’un gaz, de deux liquides ou encore de plusieurs gaz.
+                </p>
+
+                <div class="definition">
+                    <strong>Définition :</strong>
+                    un mélange est un système constitué d’au moins deux corps purs différents.
+                </div>
+
+                <h3>Exemples de mélanges</h3>
+
+                <table>
+                    <tr>
+                        <th>Type de mélange</th>
+                        <th>Exemples</th>
+                    </tr>
+                    <tr>
+                        <td>Mélanges solides</td>
+                        <td>Minéraux, béton de ciment, alliages</td>
+                    </tr>
+                    <tr>
+                        <td>Mélanges liquides</td>
+                        <td>Jus, café, eau sucrée, eau salée</td>
+                    </tr>
+                    <tr>
+                        <td>Mélanges gazeux</td>
+                        <td>L’air</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h2>2. Types de mélanges</h2>
+
+            <div class="box">
+                <p>
+                    Pour distinguer les types de mélanges, on observe si les constituants
+                    sont visibles ou non à l’œil nu.
+                </p>
+
+                <p>
+                    On ajoute du sable dans un récipient contenant de l’eau,
+                    puis on ajoute du sel dans un autre récipient contenant de l’eau.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Mélange</th>
+                        <th>Observation</th>
+                        <th>Type</th>
+                    </tr>
+                    <tr>
+                        <td>Eau + sable</td>
+                        <td>On peut distinguer les constituants à l’œil nu.</td>
+                        <td>Mélange hétérogène</td>
+                    </tr>
+                    <tr>
+                        <td>Eau + sel</td>
+                        <td>On ne peut pas distinguer les constituants à l’œil nu.</td>
+                        <td>Mélange homogène</td>
+                    </tr>
+                </table>
+
+                <div class="important">
+                    <strong>Conclusion :</strong>
+                    il existe deux types de mélanges : les mélanges homogènes
+                    et les mélanges hétérogènes.
+                </div>
+            </div>
+
+            <h2>3. Mélange homogène</h2>
+
+            <div class="box">
+                <p>
+                    Un mélange homogène est un mélange dont on ne peut pas distinguer
+                    les différents constituants à l’œil nu.
+                </p>
+
+                <div class="definition">
+                    <strong>Définition :</strong>
+                    un mélange homogène est un mélange qui présente une seule phase visible.
+                </div>
+
+                <p>
+                    <strong>Exemples :</strong>
+                    eau de robinet, limonade, eau salée, eau sucrée, sirop avec eau.
+                </p>
+
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    dans un mélange homogène, les constituants existent,
+                    mais ils ne sont pas visibles séparément à l’œil nu.
+                </div>
+            </div>
+
+            <h2>4. Mélange hétérogène</h2>
+
+            <div class="box">
+                <p>
+                    Un mélange hétérogène est un mélange dont on peut distinguer
+                    au moins deux constituants à l’œil nu.
+                </p>
+
+                <div class="definition">
+                    <strong>Définition :</strong>
+                    un mélange hétérogène est un mélange qui présente au moins deux phases visibles.
+                </div>
+
+                <p>
+                    <strong>Exemples :</strong>
+                    eau et huile, eau et sable, eau et farine, eau et terre.
+                </p>
+
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    dans un mélange hétérogène, on peut voir plusieurs parties différentes.
+                </div>
+            </div>
+
+            <h2>5. Mélange de l’eau et de l’alcool</h2>
+
+            <div class="box">
+                <p>
+                    Lorsque l’on mélange de l’eau et de l’alcool, on obtient un mélange
+                    homogène. On ne distingue plus séparément l’eau et l’alcool.
+                </p>
+
+                <div class="definition">
+                    <strong>Conclusion :</strong>
+                    l’eau et l’alcool sont deux liquides miscibles.
+                </div>
+
+                <p>
+                    Deux liquides sont dits <strong>miscibles</strong> lorsqu’ils forment
+                    un mélange homogène.
+                </p>
+            </div>
+
+            <h2>6. Mélange de l’eau et de l’huile</h2>
+
+            <div class="box">
+                <p>
+                    Avant agitation, l’huile reste au-dessus de l’eau. Après agitation,
+                    le mélange devient trouble : l’huile se disperse dans l’eau sous forme
+                    de petites gouttelettes.
+                </p>
+
+                <div class="definition">
+                    <strong>Définition :</strong>
+                    une émulsion est une dispersion temporaire de petites gouttelettes
+                    d’un liquide dans un autre liquide avec lequel il ne se mélange pas.
+                </div>
+
+                <p>
+                    Après un temps de repos, l’huile remonte et se sépare de l’eau.
+                    On obtient de nouveau un mélange hétérogène.
+                </p>
+
+                <div class="important">
+                    <strong>Conclusion :</strong>
+                    l’eau et l’huile sont deux liquides non miscibles.
+                </div>
+            </div>
+
+            <h2>7. Mélange de liquide et de gaz</h2>
+
+            <div class="box">
+                <p>
+                    Les boissons gazeuses contiennent un gaz dissous dans le liquide.
+                    Lorsque ce gaz se libère, il apparaît sous forme de bulles.
+                </p>
+
+                <div class="definition">
+                    <strong>Conclusion :</strong>
+                    les boissons gazeuses sont des mélanges homogènes de liquide et de gaz
+                    tant que le gaz est dissous dans le liquide.
+                </div>
+            </div>
+
+            <h2>8. Vocabulaire essentiel</h2>
+
+            <div class="box">
+                <table>
+                    <tr>
+                        <th>Mot</th>
+                        <th>Signification</th>
+                    </tr>
+                    <tr>
+                        <td>Constituants</td>
+                        <td>Les corps purs qui forment un mélange.</td>
+                    </tr>
+                    <tr>
+                        <td>Phase</td>
+                        <td>Une partie visible d’un mélange.</td>
+                    </tr>
+                    <tr>
+                        <td>Homogène</td>
+                        <td>Mélange dont les constituants ne sont pas distingués à l’œil nu.</td>
+                    </tr>
+                    <tr>
+                        <td>Hétérogène</td>
+                        <td>Mélange dont au moins deux constituants sont visibles à l’œil nu.</td>
+                    </tr>
+                    <tr>
+                        <td>Miscibles</td>
+                        <td>Deux liquides qui forment un mélange homogène.</td>
+                    </tr>
+                    <tr>
+                        <td>Non miscibles</td>
+                        <td>Deux liquides qui forment un mélange hétérogène.</td>
+                    </tr>
+                    <tr>
+                        <td>Émulsion</td>
+                        <td>Dispersion temporaire de gouttelettes d’un liquide dans un autre liquide.</td>
+                    </tr>
+                </table>
+            </div>
+
+        </section>
+
+        <section id="resume">
+            <h2>Résumé du cours</h2>
+
+            <div class="resume">
+                <ul>
+                    <li>Un mélange est constitué d’au moins deux corps purs.</li>
+                    <li>Un mélange peut être solide, liquide ou gazeux.</li>
+                    <li>Un mélange homogène ne permet pas de distinguer ses constituants à l’œil nu.</li>
+                    <li>Un mélange hétérogène permet de distinguer au moins deux constituants à l’œil nu.</li>
+                    <li>L’eau et le sel forment un mélange homogène.</li>
+                    <li>L’eau et le sable forment un mélange hétérogène.</li>
+                    <li>Deux liquides miscibles forment un mélange homogène.</li>
+                    <li>Deux liquides non miscibles forment un mélange hétérogène.</li>
+                    <li>L’eau et l’alcool sont miscibles.</li>
+                    <li>L’eau et l’huile sont non miscibles.</li>
+                    <li>Une émulsion est un mélange temporairement trouble.</li>
+                    <li>Les boissons gazeuses contiennent un gaz dissous dans un liquide.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="exercices">
+            <h2>Exercices d’application</h2>
+
+            <div class="box">
+                <h3>Exercice 1 : Compléter les phrases</h3>
+
+                <p>
+                    Complète avec les mots suivants :
+                    <strong>homogène - phase - hétérogène - constituants - miscibles - non miscibles</strong>.
+                </p>
+
+                <ol>
+                    <li>Un mélange __________ est un mélange dont on ne peut pas distinguer ses __________ à l’œil nu.</li>
+                    <li>Un mélange est dit __________ lorsque, à l’œil nu, on distingue au moins deux parties.</li>
+                    <li>On dit que deux liquides sont __________ lorsqu’ils forment un mélange homogène.</li>
+                    <li>On dit que deux liquides sont __________ lorsqu’ils forment un mélange hétérogène.</li>
+                    <li>Dans un mélange, chaque partie observée représente une __________.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 2 : Mélange eau et huile</h3>
+
+                <p>
+                    On introduit dans un tube à essai de l’eau et de l’huile.
+                    Ce mélange est appelé mélange hétérogène.
+                </p>
+
+                <ol>
+                    <li>Qu’observes-tu avant agitation ?</li>
+                    <li>Pourquoi dit-on que ce mélange est hétérogène ?</li>
+                    <li>On agite le tube à essai. Qu’observes-tu ?</li>
+                    <li>Après une certaine attente, qu’observes-tu ?</li>
+                    <li>Combien de substances contient ce mélange ?</li>
+                    <li>Peut-on voir ces substances à l’œil nu ?</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 3 : Vrai ou faux</h3>
+
+                <ol>
+                    <li>Certains constituants sont visibles dans un mélange hétérogène.</li>
+                    <li>Certains constituants sont visibles dans un mélange homogène.</li>
+                    <li>L’eau et l’huile sont miscibles.</li>
+                    <li>L’eau et l’huile sont non miscibles.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 4 : Classer les mélanges</h3>
+
+                <p>
+                    Ahmed réalise les mélanges suivants :
+                </p>
+
+                <ul>
+                    <li>Mélange 1 : eau + sucre</li>
+                    <li>Mélange 2 : eau + huile</li>
+                    <li>Mélange 3 : eau + sirop</li>
+                    <li>Mélange 4 : eau + sable fin</li>
+                </ul>
+
+                <p>
+                    Complète le tableau en indiquant si le mélange est homogène ou hétérogène.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Type</th>
+                        <th>Mélange 1</th>
+                        <th>Mélange 2</th>
+                        <th>Mélange 3</th>
+                        <th>Mélange 4</th>
+                    </tr>
+                    <tr>
+                        <td>Homogène</td>
+                        <td>...........</td>
+                        <td>...........</td>
+                        <td>...........</td>
+                        <td>...........</td>
+                    </tr>
+                    <tr>
+                        <td>Hétérogène</td>
+                        <td>...........</td>
+                        <td>...........</td>
+                        <td>...........</td>
+                        <td>...........</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section id="corrige">
+            <h2>Corrigé indicatif</h2>
+
+            <div class="box">
+                <h3>Correction de l’exercice 1</h3>
+
+                <ol>
+                    <li>Un mélange <strong>homogène</strong> est un mélange dont on ne peut pas distinguer ses <strong>constituants</strong> à l’œil nu.</li>
+                    <li>Un mélange est dit <strong>hétérogène</strong> lorsque, à l’œil nu, on distingue au moins deux parties.</li>
+                    <li>Deux liquides sont <strong>miscibles</strong> lorsqu’ils forment un mélange homogène.</li>
+                    <li>Deux liquides sont <strong>non miscibles</strong> lorsqu’ils forment un mélange hétérogène.</li>
+                    <li>Dans un mélange, chaque partie observée représente une <strong>phase</strong>.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 2</h3>
+
+                <ol>
+                    <li>On observe deux couches : l’huile au-dessus et l’eau en dessous.</li>
+                    <li>Ce mélange est hétérogène car on distingue les deux constituants à l’œil nu.</li>
+                    <li>Après agitation, le mélange devient trouble : l’huile se disperse en petites gouttelettes.</li>
+                    <li>Après repos, l’huile et l’eau se séparent à nouveau.</li>
+                    <li>Le mélange contient deux substances : l’eau et l’huile.</li>
+                    <li>Oui, on peut les voir à l’œil nu après repos.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 3</h3>
+
+                <ol>
+                    <li>Vrai</li>
+                    <li>Faux</li>
+                    <li>Faux</li>
+                    <li>Vrai</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 4</h3>
+
+                <table>
+                    <tr>
+                        <th>Mélange</th>
+                        <th>Type</th>
+                    </tr>
+                    <tr>
+                        <td>Eau + sucre</td>
+                        <td>Homogène</td>
+                    </tr>
+                    <tr>
+                        <td>Eau + huile</td>
+                        <td>Hétérogène</td>
+                    </tr>
+                    <tr>
+                        <td>Eau + sirop</td>
+                        <td>Homogène</td>
+                    </tr>
+                    <tr>
+                        <td>Eau + sable fin</td>
+                        <td>Hétérogène</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section id="navigation">
+            <h2>Navigation</h2>
+
+            <div class="box">
+                <a href="1ac-s1-chaleur-changements-etat.html" class="btn">Cours précédent</a>
+                <a href="1ac.html" class="btn">Retour aux cours de 1ère année</a>
+                <a href="index.html" class="btn">Retour à l’accueil</a>
+                <a href="1ac-s1-dissolution-eau.html" class="btn">Cours suivant</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 - Physique-Chimie Collège | Les mélanges</p>
+    </footer>
+
+</body>
+</html>
