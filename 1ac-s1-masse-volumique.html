@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La masse volumique - 1AC</title>
+
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        header.hero {
+            position: relative;
+            color: white;
+            padding: 70px 20px;
+            text-align: center;
+            overflow: hidden;
+            min-height: 430px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                135deg,
+                rgba(15, 76, 129, 0.80),
+                rgba(26, 188, 156, 0.68)
+            );
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .site-logo {
+            width: 95px;
+            height: 95px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            background-color: white;
+            padding: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+        }
+
+        header h1 {
+            font-size: 34px;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        header p {
+            font-size: 17px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        nav {
+            background-color: #083b66;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #1abc9c;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            color: #0f4c81;
+            margin: 30px 0 15px;
+            border-left: 5px solid #1abc9c;
+            padding-left: 10px;
+            font-size: 26px;
+        }
+
+        h3 {
+            color: #0f4c81;
+            margin: 20px 0 10px;
+        }
+
+        .box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+
+        .definition {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .important {
+            background-color: #fff7e6;
+            border-left: 5px solid #f39c12;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .resume {
+            background-color: #eef4ff;
+            border-left: 5px solid #0f4c81;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .pdf-box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            height: 750px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #0f4c81;
+            color: white;
+        }
+
+        .formula {
+            text-align: center;
+            font-size: 22px;
+            color: #083b66;
+            font-weight: bold;
+            margin: 20px 0;
+            background-color: #eef4ff;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 10px 10px 0 0;
+            background-color: #1abc9c;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #14977d;
+        }
+
+        footer {
+            background-color: #083b66;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            header.hero {
+                min-height: 360px;
+                padding: 55px 15px;
+            }
+
+            .hero-bg-video {
+                width: auto;
+                height: 100%;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            header p {
+                font-size: 15px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 6px;
+                font-size: 14px;
+            }
+
+            .pdf-viewer {
+                height: 520px;
+            }
+
+            .container {
+                padding: 30px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="hero">
+
+        <video class="hero-bg-video" autoplay muted loop playsinline>
+            <source src="background.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <img src="logo.png" alt="Logo Physique-Chimie Collège" class="site-logo" onerror="this.style.display='none'">
+
+            <h1>La masse volumique</h1>
+            <p>1ère année collège - Semestre 1 | Cours, PDF, résumé, exercices et corrigés</p>
+        </div>
+
+    </header>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="1ac.html">Cours 1AC</a>
+        <a href="#presentation">Présentation</a>
+        <a href="#pdf">PDF du cours</a>
+        <a href="#lecon">Leçon</a>
+        <a href="#resume">Résumé</a>
+        <a href="#exercices">Exercices</a>
+        <a href="#corrige">Corrigés</a>
+    </nav>
+
+    <div class="container">
+
+        <section id="presentation">
+            <h2>Présentation du cours</h2>
+
+            <div class="box">
+                <p>
+                    Ce cours présente la notion de masse volumique. Il permet de comprendre
+                    que deux corps peuvent avoir le même volume mais des masses différentes,
+                    car ils ne sont pas constitués de la même matière.
+                </p>
+
+                <p>
+                    On apprend aussi à calculer la masse volumique d’un liquide ou d’un solide
+                    et à utiliser cette grandeur pour comparer les corps et expliquer
+                    la flottabilité.
+                </p>
+
+                <div class="definition">
+                    <strong>Objectif du cours :</strong>
+                    comprendre la relation entre la masse, le volume et la masse volumique,
+                    savoir calculer la masse volumique d’un corps et expliquer pourquoi
+                    certains corps flottent alors que d’autres coulent.
+                </div>
+            </div>
+        </section>
+
+        <section id="pdf">
+            <h2>Document PDF du cours</h2>
+
+            <div class="pdf-box">
+                <p>
+                    Vous pouvez consulter le document PDF directement sur cette page,
+                    l’ouvrir dans un nouvel onglet ou le télécharger.
+                </p>
+
+                <a href="./1ac-s1-masse-volumique.pdf" target="_blank" class="btn">Ouvrir le PDF</a>
+                <a href="./1ac-s1-masse-volumique.pdf" download class="btn">Télécharger le PDF</a>
+
+                <iframe src="./1ac-s1-masse-volumique.pdf" class="pdf-viewer"></iframe>
+            </div>
+        </section>
+
+        <section id="lecon">
+
+            <h2>1. Notion de masse volumique</h2>
+
+            <div class="box">
+                <p>
+                    Lorsqu’on mesure la masse de plusieurs liquides ayant le même volume,
+                    on remarque que leurs masses ne sont pas toujours égales.
+                    Par exemple, 100 mL d’eau, 100 mL d’huile et 100 mL de glycérine
+                    n’ont pas la même masse.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Liquide</th>
+                        <th>Volume</th>
+                        <th>Masse</th>
+                    </tr>
+                    <tr>
+                        <td>Huile</td>
+                        <td>100 mL</td>
+                        <td>90 g</td>
+                    </tr>
+                    <tr>
+                        <td>Eau</td>
+                        <td>100 mL</td>
+                        <td>100 g</td>
+                    </tr>
+                    <tr>
+                        <td>Glycérine</td>
+                        <td>100 mL</td>
+                        <td>123 g</td>
+                    </tr>
+                </table>
+
+                <div class="important">
+                    <strong>Observation :</strong>
+                    des liquides de même volume peuvent avoir des masses différentes.
+                </div>
+            </div>
+
+            <h2>2. Définition de la masse volumique</h2>
+
+            <div class="box">
+                <p>
+                    La masse volumique d’un corps est une grandeur physique qui représente
+                    la masse d’une unité de volume de ce corps.
+                </p>
+
+                <div class="definition">
+                    <strong>Définition :</strong>
+                    la masse volumique est le rapport entre la masse d’un corps
+                    et son volume.
+                </div>
+
+                <div class="formula">
+                    ρ = m / V
+                </div>
+
+                <table>
+                    <tr>
+                        <th>Grandeur</th>
+                        <th>Symbole</th>
+                        <th>Unité possible</th>
+                    </tr>
+                    <tr>
+                        <td>Masse volumique</td>
+                        <td>ρ</td>
+                        <td>kg/m<sup>3</sup>, g/cm<sup>3</sup>, g/mL</td>
+                    </tr>
+                    <tr>
+                        <td>Masse</td>
+                        <td>m</td>
+                        <td>kg ou g</td>
+                    </tr>
+                    <tr>
+                        <td>Volume</td>
+                        <td>V</td>
+                        <td>m<sup>3</sup>, cm<sup>3</sup> ou mL</td>
+                    </tr>
+                </table>
+
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    pour les solides, on utilise souvent g/cm<sup>3</sup>.
+                    Pour les liquides, on utilise souvent g/mL.
+                </div>
+            </div>
+
+            <h2>3. Masse volumique d’un liquide</h2>
+
+            <div class="box">
+                <p>
+                    Pour déterminer la masse volumique d’un liquide, on mesure sa masse
+                    et son volume, puis on applique la relation :
+                </p>
+
+                <div class="formula">
+                    ρ = m / V
+                </div>
+
+                <table>
+                    <tr>
+                        <th>Liquide</th>
+                        <th>Masse</th>
+                        <th>Volume</th>
+                        <th>Masse volumique</th>
+                    </tr>
+                    <tr>
+                        <td>Eau</td>
+                        <td>100 g</td>
+                        <td>100 mL</td>
+                        <td>1 g/mL</td>
+                    </tr>
+                    <tr>
+                        <td>Huile</td>
+                        <td>90 g</td>
+                        <td>100 mL</td>
+                        <td>0,9 g/mL</td>
+                    </tr>
+                    <tr>
+                        <td>Glycérine</td>
+                        <td>123 g</td>
+                        <td>100 mL</td>
+                        <td>1,23 g/mL</td>
+                    </tr>
+                </table>
+
+                <div class="definition">
+                    <strong>Conclusion :</strong>
+                    chaque liquide possède une masse volumique qui le caractérise.
+                </div>
+            </div>
+
+            <h2>4. Exemples de masses volumiques de liquides</h2>
+
+            <div class="box">
+                <table>
+                    <tr>
+                        <th>Liquide</th>
+                        <th>Eau</th>
+                        <th>Lait</th>
+                        <th>Huile</th>
+                        <th>Éthanol</th>
+                        <th>Essence</th>
+                        <th>Glycérine</th>
+                    </tr>
+                    <tr>
+                        <td>Masse volumique en g/mL</td>
+                        <td>1</td>
+                        <td>1,03</td>
+                        <td>0,9</td>
+                        <td>0,79</td>
+                        <td>0,73</td>
+                        <td>1,23</td>
+                    </tr>
+                </table>
+
+                <div class="important">
+                    <strong>Exemple :</strong>
+                    l’huile a une masse volumique plus petite que celle de l’eau,
+                    donc elle peut flotter sur l’eau.
+                </div>
+            </div>
+
+            <h2>5. Masse volumique d’un solide</h2>
+
+            <div class="box">
+                <p>
+                    Pour déterminer la masse volumique d’un solide, on mesure sa masse
+                    et son volume. Ensuite, on calcule le rapport de la masse par le volume.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Solide</th>
+                        <th>Volume</th>
+                        <th>Masse</th>
+                        <th>Masse volumique</th>
+                    </tr>
+                    <tr>
+                        <td>Bois</td>
+                        <td>20 cm<sup>3</sup></td>
+                        <td>13 g</td>
+                        <td>0,65 g/cm<sup>3</sup></td>
+                    </tr>
+                    <tr>
+                        <td>Fer</td>
+                        <td>20 cm<sup>3</sup></td>
+                        <td>157,2 g</td>
+                        <td>7,86 g/cm<sup>3</sup></td>
+                    </tr>
+                    <tr>
+                        <td>Aluminium</td>
+                        <td>20 cm<sup>3</sup></td>
+                        <td>54 g</td>
+                        <td>2,7 g/cm<sup>3</sup></td>
+                    </tr>
+                </table>
+
+                <div class="definition">
+                    <strong>Conclusion :</strong>
+                    chaque solide possède une masse volumique qui le caractérise.
+                </div>
+            </div>
+
+            <h2>6. Condition de flottabilité des corps</h2>
+
+            <div class="box">
+                <p>
+                    La masse volumique permet d’expliquer pourquoi certains corps flottent
+                    sur l’eau alors que d’autres coulent.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Matière</th>
+                        <th>Liège</th>
+                        <th>Bois</th>
+                        <th>Plastique</th>
+                        <th>Eau</th>
+                        <th>Verre</th>
+                        <th>Fer</th>
+                        <th>Cuivre</th>
+                    </tr>
+                    <tr>
+                        <td>Masse volumique</td>
+                        <td>0,2</td>
+                        <td>0,8</td>
+                        <td>0,9</td>
+                        <td>1</td>
+                        <td>2,5</td>
+                        <td>7,8</td>
+                        <td>8,9</td>
+                    </tr>
+                </table>
+
+                <div class="important">
+                    <strong>Règle de flottabilité :</strong>
+                    un corps flotte sur un liquide si sa masse volumique est inférieure
+                    à celle du liquide. Il coule si sa masse volumique est supérieure
+                    à celle du liquide.
+                </div>
+
+                <ul>
+                    <li>Le bois, le liège et le plastique flottent sur l’eau.</li>
+                    <li>Le fer, le cuivre et le verre coulent dans l’eau.</li>
+                </ul>
+            </div>
+
+        </section>
+
+        <section id="resume">
+            <h2>Résumé du cours</h2>
+
+            <div class="resume">
+                <ul>
+                    <li>La masse volumique est une grandeur physique qui caractérise un corps.</li>
+                    <li>Elle représente la masse d’une unité de volume.</li>
+                    <li>Son symbole est ρ, qui se lit rho.</li>
+                    <li>La relation de la masse volumique est : ρ = m / V.</li>
+                    <li>L’unité internationale est kg/m<sup>3</sup>.</li>
+                    <li>On utilise aussi g/cm<sup>3</sup> pour les solides et g/mL pour les liquides.</li>
+                    <li>Chaque liquide possède une masse volumique qui le caractérise.</li>
+                    <li>Chaque solide possède aussi une masse volumique qui le caractérise.</li>
+                    <li>Un corps flotte si sa masse volumique est inférieure à celle du liquide.</li>
+                    <li>Un corps coule si sa masse volumique est supérieure à celle du liquide.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="exercices">
+            <h2>Exercices d’application</h2>
+
+            <div class="box">
+                <h3>Exercice 1 : Calcul de la masse volumique</h3>
+
+                <p>
+                    Une plaque a une masse de <strong>3,55 kg</strong> et un volume de
+                    <strong>396 mL</strong>.
+                </p>
+
+                <ol>
+                    <li>Exprimer la masse de cette plaque en g.</li>
+                    <li>Calculer la masse volumique de cette plaque en g/mL.</li>
+                    <li>En quel matériau la plaque est-elle formée ?</li>
+                </ol>
+
+                <table>
+                    <tr>
+                        <th>Matériau</th>
+                        <th>Fer</th>
+                        <th>Argent</th>
+                        <th>Cuivre</th>
+                        <th>Zinc</th>
+                        <th>Aluminium</th>
+                    </tr>
+                    <tr>
+                        <td>ρ en g/mL</td>
+                        <td>7,87</td>
+                        <td>10,5</td>
+                        <td>8,96</td>
+                        <td>7,13</td>
+                        <td>2,7</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 2 : Collier de Nabila</h3>
+
+                <p>
+                    Nabila veut savoir si son collier est fait en or pur.
+                    Elle mesure la masse du collier et son volume par déplacement d’eau.
+                    On donne la masse volumique de l’or :
+                </p>
+
+                <div class="formula">
+                    ρ<sub>or</sub> = 19,3 g/cm<sup>3</sup>
+                </div>
+
+                <ol>
+                    <li>Comment peut-elle vérifier si le collier est en or pur ?</li>
+                    <li>Quel calcul doit-elle faire ?</li>
+                    <li>Que conclure si la masse volumique trouvée est différente de 19,3 g/cm<sup>3</sup> ?</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 3 : Volume d’un objet</h3>
+
+                <p>
+                    On dispose d’un récipient gradué de base carrée de côté
+                    <strong>10 cm</strong>. On verse de l’eau jusqu’à une hauteur
+                    de <strong>15 cm</strong>. Après avoir introduit un objet,
+                    la hauteur de l’eau devient <strong>17,5 cm</strong>.
+                    La masse de l’objet est <strong>675 g</strong>.
+                </p>
+
+                <ol>
+                    <li>Calculer le volume de l’objet.</li>
+                    <li>Calculer la masse volumique du métal.</li>
+                    <li>Identifier le matériau si sa masse volumique est proche de 2,7 g/cm<sup>3</sup>.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 4 : Exploitation d’un graphique</h3>
+
+                <p>
+                    Pour des corps formés du même matériau, des mesures de masses et de volumes
+                    ont été représentées graphiquement.
+                </p>
+
+                <ol>
+                    <li>Comment peut-on déterminer la masse volumique à partir d’un graphique m = f(V) ?</li>
+                    <li>Si le rapport m/V est proche de 2,7 g/cm<sup>3</sup>, quelle est la nature du matériau ?</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="corrige">
+            <h2>Corrigé indicatif</h2>
+
+            <div class="box">
+                <h3>Correction de l’exercice 1</h3>
+
+                <p>
+                    On convertit d’abord la masse :
+                </p>
+
+                <div class="formula">
+                    3,55 kg = 3550 g
+                </div>
+
+                <p>
+                    On calcule la masse volumique :
+                </p>
+
+                <div class="formula">
+                    ρ = m / V = 3550 / 396 ≈ 8,96 g/mL
+                </div>
+
+                <p>
+                    D’après le tableau, la plaque est formée de <strong>cuivre</strong>.
+                </p>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 2</h3>
+
+                <p>
+                    Pour vérifier si le collier est en or pur, Nabila doit calculer
+                    sa masse volumique à partir de la relation :
+                </p>
+
+                <div class="formula">
+                    ρ = m / V
+                </div>
+
+                <p>
+                    Elle compare ensuite la valeur trouvée avec la masse volumique de l’or :
+                    <strong>19,3 g/cm<sup>3</sup></strong>.
+                </p>
+
+                <div class="important">
+                    Si la masse volumique du collier est différente de 19,3 g/cm<sup>3</sup>,
+                    alors le collier n’est pas en or pur.
+                </div>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 3</h3>
+
+                <p>
+                    La base du récipient est carrée de côté 10 cm :
+                </p>
+
+                <div class="formula">
+                    Surface de la base = 10 × 10 = 100 cm<sup>2</sup>
+                </div>
+
+                <p>
+                    L’augmentation de la hauteur de l’eau est :
+                </p>
+
+                <div class="formula">
+                    Δh = 17,5 - 15 = 2,5 cm
+                </div>
+
+                <p>
+                    Le volume de l’objet est :
+                </p>
+
+                <div class="formula">
+                    V = 100 × 2,5 = 250 cm<sup>3</sup>
+                </div>
+
+                <p>
+                    Sa masse volumique est :
+                </p>
+
+                <div class="formula">
+                    ρ = m / V = 675 / 250 = 2,7 g/cm<sup>3</sup>
+                </div>
+
+                <p>
+                    Le métal est donc probablement <strong>l’aluminium</strong>.
+                </p>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 4</h3>
+
+                <p>
+                    Pour déterminer la masse volumique à partir d’un graphique,
+                    on choisit un point du graphique puis on calcule le rapport :
+                </p>
+
+                <div class="formula">
+                    ρ = m / V
+                </div>
+
+                <p>
+                    Si la valeur obtenue est proche de <strong>2,7 g/cm<sup>3</sup></strong>,
+                    alors le matériau est <strong>l’aluminium</strong>.
+                </p>
+            </div>
+        </section>
+
+        <section id="navigation">
+            <h2>Navigation</h2>
+
+            <div class="box">
+                <a href="1ac-s1-mesure-masse.html" class="btn">Cours précédent</a>
+                <a href="1ac.html" class="btn">Retour aux cours de 1ère année</a>
+                <a href="index.html" class="btn">Retour à l’accueil</a>
+                <a href="1ac-s1-pression.html" class="btn">Cours suivant</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 - Physique-Chimie Collège | La masse volumique</p>
+    </footer>
+
+</body>
+</html>
