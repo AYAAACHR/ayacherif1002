@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le mouvement et le repos - 3AC</title>
+
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        header.hero {
+            position: relative;
+            color: white;
+            padding: 70px 20px;
+            text-align: center;
+            overflow: hidden;
+            min-height: 430px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                135deg,
+                rgba(15, 76, 129, 0.80),
+                rgba(26, 188, 156, 0.68)
+            );
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .site-logo {
+            width: 95px;
+            height: 95px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            background-color: white;
+            padding: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+        }
+
+        header h1 {
+            font-size: 34px;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        header p {
+            font-size: 17px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        nav {
+            background-color: #083b66;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #1abc9c;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            color: #0f4c81;
+            margin: 30px 0 15px;
+            border-left: 5px solid #1abc9c;
+            padding-left: 10px;
+            font-size: 26px;
+        }
+
+        h3 {
+            color: #0f4c81;
+            margin: 20px 0 10px;
+        }
+
+        .box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+
+        .definition {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .important {
+            background-color: #fff7e6;
+            border-left: 5px solid #f39c12;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .resume {
+            background-color: #eef4ff;
+            border-left: 5px solid #0f4c81;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .warning {
+            background-color: #fff1f1;
+            border-left: 5px solid #e74c3c;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .experience {
+            background-color: #f8fcff;
+            border: 1px solid #dceeff;
+            border-left: 5px solid #0f4c81;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .pdf-box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            height: 750px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #0f4c81;
+            color: white;
+        }
+
+        .schema-box {
+            background-color: #ffffff;
+            border: 1px solid #dceeff;
+            border-radius: 12px;
+            padding: 15px;
+            margin: 18px 0;
+            text-align: center;
+        }
+
+        .schema-box svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .caption {
+            font-size: 14px;
+            color: #555;
+            margin-top: 8px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #eef4ff;
+            color: #083b66;
+            padding: 6px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin: 5px 5px 5px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 10px 10px 0 0;
+            background-color: #1abc9c;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #14977d;
+        }
+
+        footer {
+            background-color: #083b66;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            header.hero {
+                min-height: 360px;
+                padding: 55px 15px;
+            }
+
+            .hero-bg-video {
+                width: auto;
+                height: 100%;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            header p {
+                font-size: 15px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 6px;
+                font-size: 14px;
+            }
+
+            .pdf-viewer {
+                height: 520px;
+            }
+
+            .container {
+                padding: 30px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="hero">
+
+        <video class="hero-bg-video" autoplay muted loop playsinline>
+            <source src="background.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <img src="logo.png" alt="Logo Physique-Chimie Collège" class="site-logo" onerror="this.style.display='none'">
+
+            <h1>Le mouvement et le repos</h1>
+            <p>3ème année collège - Semestre 2 | Cours, PDF, illustrations, activités, résumé, exercices et corrigés</p>
+        </div>
+
+    </header>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="3ac.html">Cours 3AC</a>
+        <a href="#presentation">Présentation</a>
+        <a href="#pdf">PDF du cours</a>
+        <a href="#lecon">Leçon</a>
+        <a href="#experiences">Activités</a>
+        <a href="#resume">Résumé</a>
+        <a href="#exercices">Exercices</a>
+        <a href="#corrige">Corrigés</a>
+    </nav>
+
+    <div class="container">
+
+        <section id="presentation">
+            <h2>Présentation du cours</h2>
+
+            <div class="box">
+                <p>
+                    Ce cours présente les notions de mouvement, de repos et de référentiel.
+                    Il permet de comprendre qu’un même corps peut être au repos pour un observateur
+                    et en mouvement pour un autre observateur.
+                </p>
+
+                <p>
+                    Le cours explique aussi la trajectoire d’un mobile et les principaux types
+                    de mouvements : le mouvement de translation et le mouvement de rotation.
+                </p>
+
+                <div class="definition">
+                    <strong>Objectif du cours :</strong>
+                    comprendre la notion de référentiel, expliquer le caractère relatif
+                    du mouvement, identifier les types de trajectoires et distinguer
+                    le mouvement de translation du mouvement de rotation.
+                </div>
+
+                <div class="important">
+                    <strong>Idée essentielle :</strong>
+                    le mouvement et le repos dépendent toujours du référentiel choisi.
+                </div>
+            </div>
+        </section>
+
+        <section id="pdf">
+            <h2>Document PDF du cours avec illustrations</h2>
+
+            <div class="pdf-box">
+                <p>
+                    Vous pouvez consulter le document PDF directement sur cette page,
+                    l’ouvrir dans un nouvel onglet ou le télécharger.
+                </p>
+
+                <a href="./3ac-s2-mouvement-repos.pdf" target="_blank" class="btn">Ouvrir le PDF</a>
+                <a href="./3ac-s2-mouvement-repos.pdf" download class="btn">Télécharger le PDF</a>
+
+                <iframe src="./3ac-s2-mouvement-repos.pdf" class="pdf-viewer"></iframe>
+            </div>
+        </section>
+
+        <section id="lecon">
+
+            <h2>1. Description d’un mouvement</h2>
+
+            <div class="box">
+                <p>
+                    Pour décrire le mouvement ou le repos d’un corps, il faut choisir
+                    un autre corps ou un lieu par rapport auquel on observe ce mouvement.
+                    Ce corps choisi est appelé <strong>référentiel</strong>.
+                </p>
+
+                <div class="definition">
+                    <strong>Définition :</strong>
+                    un référentiel est un objet, un lieu ou un point par rapport auquel
+                    on étudie le mouvement ou le repos d’un corps.
+                </div>
+
+                <p>
+                    Exemple : un élève assis dans un bus qui roule est au repos par rapport
+                    au bus, mais il est en mouvement par rapport à la route.
+                </p>
+
+                <div class="schema-box">
+                    <svg viewBox="0 0 700 260">
+                        <rect x="10" y="10" width="680" height="240" rx="16" fill="#f8fcff" stroke="#dceeff"/>
+
+                        <text x="35" y="45" font-size="23" fill="#0f4c81" font-weight="bold">
+                            Mouvement et référentiel
+                        </text>
+
+                        <line x1="50" y1="200" x2="650" y2="200" stroke="#777" stroke-width="4"/>
+                        <text x="500" y="225" font-size="15" fill="#555">Route</text>
+
+                        <rect x="170" y="105" width="280" height="80" rx="12" fill="#ddefff" stroke="#0f4c81" stroke-width="3"/>
+                        <circle cx="220" cy="188" r="18" fill="#333"/>
+                        <circle cx="390" cy="188" r="18" fill="#333"/>
+                        <text x="280" y="145" font-size="28" fill="#0f4c81" font-weight="bold">BUS</text>
+
+                        <circle cx="240" cy="95" r="12" fill="#1abc9c"/>
+                        <text x="232" y="76" font-size="16" fill="#14977d" font-weight="bold">A</text>
+                        <text x="206" y="62" font-size="14" fill="#333">passager</text>
+
+                        <circle cx="350" cy="95" r="12" fill="#f39c12"/>
+                        <text x="342" y="76" font-size="16" fill="#e67e22" font-weight="bold">B</text>
+                        <text x="318" y="62" font-size="14" fill="#333">dans le bus</text>
+
+                        <circle cx="570" cy="165" r="12" fill="#e74c3c"/>
+                        <text x="562" y="145" font-size="16" fill="#e74c3c" font-weight="bold">C</text>
+                        <text x="530" y="130" font-size="14" fill="#333">au bord de la route</text>
+
+                        <line x1="450" y1="130" x2="535" y2="130" stroke="#0f4c81" stroke-width="3"/>
+                        <polygon points="535,130 520,138 520,122" fill="#0f4c81"/>
+
+                        <text x="55" y="235" font-size="14" fill="#333">
+                            A est au repos par rapport au bus, mais en mouvement par rapport à la route.
+                        </text>
+                    </svg>
+
+                    <p class="caption">
+                        Illustration intégrée : le mouvement dépend du référentiel choisi.
+                    </p>
+                </div>
+
+                <div class="important">
+                    <strong>Conclusion :</strong>
+                    le mouvement est relatif. Il dépend du référentiel choisi.
+                </div>
+            </div>
+
+            <h2>2. Le mouvement et le repos sont relatifs</h2>
+
+            <div class="box">
+                <p>
+                    Un corps est en mouvement par rapport à un référentiel si sa position
+                    change au cours du temps par rapport à ce référentiel.
+                </p>
+
+                <p>
+                    Un corps est au repos par rapport à un référentiel si sa position
+                    ne change pas au cours du temps par rapport à ce référentiel.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Situation</th>
+                        <th>Référentiel choisi</th>
+                        <th>État du corps</th>
+                    </tr>
+                    <tr>
+                        <td>Passager assis dans un bus qui roule</td>
+                        <td>Le bus</td>
+                        <td>Au repos</td>
+                    </tr>
+                    <tr>
+                        <td>Passager assis dans un bus qui roule</td>
+                        <td>La route</td>
+                        <td>En mouvement</td>
+                    </tr>
+                    <tr>
+                        <td>Voiture qui roule sur la route</td>
+                        <td>La route</td>
+                        <td>En mouvement</td>
+                    </tr>
+                    <tr>
+                        <td>Table dans une salle de classe</td>
+                        <td>La salle de classe</td>
+                        <td>Au repos</td>
+                    </tr>
+                </table>
+
+                <div class="definition">
+                    <strong>Conclusion :</strong>
+                    il faut toujours préciser le référentiel avant de dire
+                    qu’un corps est en mouvement ou au repos.
+                </div>
+            </div>
+
+            <h2>3. La trajectoire</h2>
+
+            <div class="box">
+                <p>
+                    Pour étudier le mouvement d’un corps, on détermine d’abord sa trajectoire.
+                    La trajectoire permet de représenter le chemin suivi par le corps.
+                </p>
+
+                <div class="definition">
+                    <strong>Définition :</strong>
+                    la trajectoire d’un point mobile est l’ensemble des positions successives
+                    occupées par ce point pendant son mouvement.
+                </div>
+
+                <div class="schema-box">
+                    <svg viewBox="0 0 700 270">
+                        <rect x="10" y="10" width="680" height="250" rx="16" fill="#ffffff" stroke="#dceeff"/>
+
+                        <text x="35" y="45" font-size="23" fill="#0f4c81" font-weight="bold">
+                            Types de trajectoires
+                        </text>
+
+                        <line x1="75" y1="130" x2="245" y2="130" stroke="#1abc9c" stroke-width="4"/>
+                        <circle cx="75" cy="130" r="6" fill="#111"/>
+                        <circle cx="120" cy="130" r="6" fill="#111"/>
+                        <circle cx="165" cy="130" r="6" fill="#111"/>
+                        <circle cx="210" cy="130" r="6" fill="#111"/>
+                        <circle cx="245" cy="130" r="6" fill="#111"/>
+                        <text x="95" y="175" font-size="16" fill="#14977d" font-weight="bold">Rectiligne</text>
+
+                        <circle cx="365" cy="130" r="55" fill="none" stroke="#f39c12" stroke-width="4"/>
+                        <circle cx="365" cy="75" r="6" fill="#111"/>
+                        <circle cx="420" cy="130" r="6" fill="#111"/>
+                        <circle cx="365" cy="185" r="6" fill="#111"/>
+                        <circle cx="310" cy="130" r="6" fill="#111"/>
+                        <text x="327" y="210" font-size="16" fill="#e67e22" font-weight="bold">Circulaire</text>
+
+                        <path d="M500 155 C530 80, 570 200, 640 105" fill="none" stroke="#0f4c81" stroke-width="4"/>
+                        <circle cx="500" cy="155" r="6" fill="#111"/>
+                        <circle cx="535" cy="105" r="6" fill="#111"/>
+                        <circle cx="570" cy="165" r="6" fill="#111"/>
+                        <circle cx="610" cy="125" r="6" fill="#111"/>
+                        <circle cx="640" cy="105" r="6" fill="#111"/>
+                        <text x="525" y="210" font-size="16" fill="#0f4c81" font-weight="bold">Curviligne</text>
+                    </svg>
+
+                    <p class="caption">
+                        Illustration intégrée : trajectoire rectiligne, circulaire et curviligne.
+                    </p>
+                </div>
+            </div>
+
+            <h2>4. Les types de trajectoires</h2>
+
+            <div class="box">
+                <table>
+                    <tr>
+                        <th>Type de trajectoire</th>
+                        <th>Définition</th>
+                        <th>Exemple</th>
+                    </tr>
+                    <tr>
+                        <td>Trajectoire rectiligne</td>
+                        <td>Les positions successives sont alignées sur une ligne droite.</td>
+                        <td>Voiture qui se déplace sur une route droite.</td>
+                    </tr>
+                    <tr>
+                        <td>Trajectoire circulaire</td>
+                        <td>Les positions successives forment un cercle ou un arc de cercle.</td>
+                        <td>Point d’une roue, aiguille d’une horloge.</td>
+                    </tr>
+                    <tr>
+                        <td>Trajectoire curviligne</td>
+                        <td>Les positions successives forment une courbe quelconque.</td>
+                        <td>Ballon lancé, skieur sur une piste courbe.</td>
+                    </tr>
+                </table>
+
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    le type de trajectoire peut dépendre du référentiel choisi.
+                </div>
+            </div>
+
+            <h2>5. Le mouvement de translation</h2>
+
+            <div class="box">
+                <p>
+                    Un solide est en mouvement de translation si tout segment reliant
+                    deux points quelconques de ce solide conserve la même direction
+                    pendant le mouvement.
+                </p>
+
+                <div class="definition">
+                    <strong>Définition :</strong>
+                    un solide est en translation lorsqu’il garde la même orientation
+                    au cours de son déplacement.
+                </div>
+
+                <div class="schema-box">
+                    <svg viewBox="0 0 700 250">
+                        <rect x="10" y="10" width="680" height="230" rx="16" fill="#ffffff" stroke="#dceeff"/>
+
+                        <text x="35" y="45" font-size="23" fill="#0f4c81" font-weight="bold">
+                            Mouvement de translation
+                        </text>
+
+                        <rect x="70" y="110" width="90" height="45" fill="#e8f6f3" stroke="#14977d" stroke-width="3"/>
+                        <line x1="85" y1="145" x2="145" y2="120" stroke="#333" stroke-width="3"/>
+
+                        <rect x="250" y="110" width="90" height="45" fill="#e8f6f3" stroke="#14977d" stroke-width="3"/>
+                        <line x1="265" y1="145" x2="325" y2="120" stroke="#333" stroke-width="3"/>
+
+                        <rect x="430" y="110" width="90" height="45" fill="#e8f6f3" stroke="#14977d" stroke-width="3"/>
+                        <line x1="445" y1="145" x2="505" y2="120" stroke="#333" stroke-width="3"/>
+
+                        <line x1="165" y1="132" x2="240" y2="132" stroke="#0f4c81" stroke-width="3"/>
+                        <polygon points="240,132 225,140 225,124" fill="#0f4c81"/>
+
+                        <line x1="345" y1="132" x2="420" y2="132" stroke="#0f4c81" stroke-width="3"/>
+                        <polygon points="420,132 405,140 405,124" fill="#0f4c81"/>
+
+                        <line x1="70" y1="180" x2="520" y2="180" stroke="#777" stroke-width="2"/>
+
+                        <text x="110" y="215" font-size="15" fill="#333">
+                            Le segment garde la même direction : le solide ne tourne pas sur lui-même.
+                        </text>
+                    </svg>
+
+                    <p class="caption">
+                        Illustration intégrée : dans une translation, le segment reste parallèle à lui-même.
+                    </p>
+                </div>
+
+                <h3>Types de translation</h3>
+
+                <table>
+                    <tr>
+                        <th>Type de translation</th>
+                        <th>Description</th>
+                        <th>Exemple</th>
+                    </tr>
+                    <tr>
+                        <td>Translation rectiligne</td>
+                        <td>La trajectoire est une droite.</td>
+                        <td>Tiroir qui glisse droit.</td>
+                    </tr>
+                    <tr>
+                        <td>Translation curviligne</td>
+                        <td>La trajectoire est une courbe.</td>
+                        <td>Cabine qui se déplace sur un câble courbe.</td>
+                    </tr>
+                    <tr>
+                        <td>Translation circulaire</td>
+                        <td>La trajectoire est circulaire mais l’objet garde son orientation.</td>
+                        <td>Nacelle d’une grande roue.</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h2>6. Le mouvement de rotation</h2>
+
+            <div class="box">
+                <p>
+                    Un solide est en mouvement de rotation autour d’un axe fixe si ses points
+                    décrivent des trajectoires circulaires autour de cet axe.
+                </p>
+
+                <div class="definition">
+                    <strong>Définition :</strong>
+                    un solide est en rotation lorsqu’il tourne autour d’un axe fixe.
+                    Les points situés sur l’axe de rotation restent immobiles.
+                </div>
+
+                <div class="schema-box">
+                    <svg viewBox="0 0 700 260">
+                        <rect x="10" y="10" width="680" height="240" rx="16" fill="#ffffff" stroke="#dceeff"/>
+
+                        <text x="35" y="45" font-size="23" fill="#0f4c81" font-weight="bold">
+                            Mouvement de rotation
+                        </text>
+
+                        <circle cx="350" cy="135" r="80" fill="none" stroke="#0f4c81" stroke-width="5"/>
+                        <circle cx="350" cy="135" r="8" fill="#0f4c81"/>
+
+                        <line x1="350" y1="135" x2="350" y2="55" stroke="#777" stroke-width="2"/>
+                        <line x1="350" y1="135" x2="430" y2="135" stroke="#777" stroke-width="2"/>
+                        <line x1="350" y1="135" x2="350" y2="215" stroke="#777" stroke-width="2"/>
+                        <line x1="350" y1="135" x2="270" y2="135" stroke="#777" stroke-width="2"/>
+                        <line x1="350" y1="135" x2="407" y2="78" stroke="#777" stroke-width="2"/>
+                        <line x1="350" y1="135" x2="407" y2="192" stroke="#777" stroke-width="2"/>
+                        <line x1="350" y1="135" x2="293" y2="192" stroke="#777" stroke-width="2"/>
+                        <line x1="350" y1="135" x2="293" y2="78" stroke="#777" stroke-width="2"/>
+
+                        <circle cx="430" cy="135" r="7" fill="#e74c3c"/>
+                        <circle cx="350" cy="55" r="7" fill="#e74c3c"/>
+                        <circle cx="270" cy="135" r="7" fill="#e74c3c"/>
+
+                        <line x1="350" y1="40" x2="350" y2="230" stroke="#1abc9c" stroke-width="3" stroke-dasharray="6,6"/>
+                        <text x="365" y="65" font-size="15" fill="#14977d" font-weight="bold">Axe de rotation</text>
+
+                        <path d="M455 100 C485 135, 455 175, 420 190" fill="none" stroke="#e74c3c" stroke-width="4"/>
+                        <polygon points="420,190 437,190 427,176" fill="#e74c3c"/>
+
+                        <text x="105" y="235" font-size="15" fill="#333">
+                            Les points de la roue décrivent des cercles autour de l’axe.
+                        </text>
+                    </svg>
+
+                    <p class="caption">
+                        Illustration intégrée : une roue en mouvement de rotation autour d’un axe fixe.
+                    </p>
+                </div>
+
+                <div class="important">
+                    <strong>Exemples :</strong>
+                    roue de vélo, aiguille d’une horloge, disque qui tourne,
+                    Terre qui tourne autour de son axe.
+                </div>
+            </div>
+
+            <h2>7. Comparaison entre translation et rotation</h2>
+
+            <div class="box">
+                <table>
+                    <tr>
+                        <th>Critère</th>
+                        <th>Mouvement de translation</th>
+                        <th>Mouvement de rotation</th>
+                    </tr>
+                    <tr>
+                        <td>Définition</td>
+                        <td>Le solide garde la même orientation.</td>
+                        <td>Le solide tourne autour d’un axe fixe.</td>
+                    </tr>
+                    <tr>
+                        <td>Trajectoire des points</td>
+                        <td>Les points peuvent avoir des trajectoires rectilignes, curvilignes ou circulaires.</td>
+                        <td>Les points décrivent des cercles autour de l’axe.</td>
+                    </tr>
+                    <tr>
+                        <td>Exemple</td>
+                        <td>Cabine d’une grande roue, tiroir qui glisse.</td>
+                        <td>Roue de vélo, aiguille d’une horloge.</td>
+                    </tr>
+                </table>
+            </div>
+
+        </section>
+
+        <section id="experiences">
+            <h2>Activités simples ajoutées</h2>
+
+            <div class="experience">
+                <h3>Activité 1 : comprendre le référentiel</h3>
+
+                <p>
+                    Observer une personne assise dans une voiture ou dans un bus.
+                </p>
+
+                <ol>
+                    <li>Choisir d’abord le véhicule comme référentiel.</li>
+                    <li>Dire si la personne est en mouvement ou au repos.</li>
+                    <li>Choisir ensuite la route comme référentiel.</li>
+                    <li>Comparer les deux réponses.</li>
+                </ol>
+
+                <p>
+                    <strong>Conclusion :</strong>
+                    la même personne peut être au repos dans un référentiel
+                    et en mouvement dans un autre.
+                </p>
+            </div>
+
+            <div class="experience">
+                <h3>Activité 2 : tracer une trajectoire</h3>
+
+                <p>
+                    Sur une feuille, marquer les positions successives d’un petit objet
+                    qui se déplace : une bille, un point sur une roue ou un jouet.
+                </p>
+
+                <ol>
+                    <li>Marquer plusieurs positions successives.</li>
+                    <li>Relier les points obtenus.</li>
+                    <li>Déterminer le type de trajectoire : rectiligne, circulaire ou curviligne.</li>
+                </ol>
+            </div>
+
+            <div class="experience">
+                <h3>Activité 3 : observer une rotation</h3>
+
+                <p>
+                    Faire tourner doucement une roue de jouet ou un couvercle rond.
+                    Marquer un point sur le bord de l’objet et observer son déplacement.
+                </p>
+
+                <p>
+                    <strong>Conclusion :</strong>
+                    le point marqué décrit une trajectoire circulaire autour de l’axe
+                    de rotation.
+                </p>
+            </div>
+
+            <div class="warning">
+                <strong>Sécurité :</strong>
+                les activités doivent être réalisées avec des objets simples et sans danger.
+                Il ne faut jamais faire d’observation sur une route réelle ou près des véhicules.
+            </div>
+        </section>
+
+        <section id="resume">
+            <h2>Résumé du cours</h2>
+
+            <div class="resume">
+                <ul>
+                    <li>Le mouvement et le repos dépendent du référentiel choisi.</li>
+                    <li>Un référentiel est un objet, un lieu ou un point choisi pour étudier un mouvement.</li>
+                    <li>Le mouvement est relatif.</li>
+                    <li>Un corps est en mouvement si sa position change par rapport au référentiel.</li>
+                    <li>Un corps est au repos si sa position ne change pas par rapport au référentiel.</li>
+                    <li>La trajectoire est l’ensemble des positions successives occupées par un point mobile.</li>
+                    <li>Une trajectoire peut être rectiligne, circulaire ou curviligne.</li>
+                    <li>Dans un mouvement de translation, le solide garde la même orientation.</li>
+                    <li>Dans un mouvement de rotation, le solide tourne autour d’un axe fixe.</li>
+                    <li>Les points situés sur l’axe de rotation sont immobiles.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="exercices">
+            <h2>Exercices d’application</h2>
+
+            <div class="box">
+                <h3>Exercice 1 : Compléter les phrases</h3>
+
+                <ol>
+                    <li>Le mouvement d’un corps dépend du __________ choisi.</li>
+                    <li>Un corps est en __________ si sa position change par rapport au référentiel.</li>
+                    <li>Un corps est au __________ si sa position ne change pas par rapport au référentiel.</li>
+                    <li>La trajectoire est l’ensemble des __________ successives occupées par un point mobile.</li>
+                    <li>Dans un mouvement de rotation, le solide tourne autour d’un __________ fixe.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 2 : Référentiel</h3>
+
+                <p>
+                    Un passager est assis dans un bus qui roule.
+                </p>
+
+                <ol>
+                    <li>Le passager est-il au repos ou en mouvement par rapport au bus ?</li>
+                    <li>Le passager est-il au repos ou en mouvement par rapport à la route ?</li>
+                    <li>Que peut-on conclure ?</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 3 : Types de trajectoires</h3>
+
+                <p>
+                    Préciser le type de trajectoire dans chaque cas :
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Situation</th>
+                        <th>Type de trajectoire</th>
+                    </tr>
+                    <tr>
+                        <td>Une voiture sur une route droite</td>
+                        <td>............................</td>
+                    </tr>
+                    <tr>
+                        <td>L’extrémité d’une aiguille d’horloge</td>
+                        <td>............................</td>
+                    </tr>
+                    <tr>
+                        <td>Un ballon lancé dans l’air</td>
+                        <td>............................</td>
+                    </tr>
+                    <tr>
+                        <td>Un skieur sur une piste courbe</td>
+                        <td>............................</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 4 : Translation ou rotation</h3>
+
+                <p>
+                    Préciser le type de mouvement dans chaque cas :
+                </p>
+
+                <ol>
+                    <li>Une aiguille d’horloge qui tourne.</li>
+                    <li>Une cabine de téléphérique qui se déplace sans tourner sur elle-même.</li>
+                    <li>Une roue de vélo qui tourne.</li>
+                    <li>Un tiroir qui glisse en ligne droite.</li>
+                    <li>Une nacelle d’une grande roue qui garde la même orientation.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 5 : Manège</h3>
+
+                <p>
+                    Un manège tourne en entraînant des nacelles.
+                </p>
+
+                <ol>
+                    <li>Quelle est la trajectoire d’un point situé sur la grande roue ?</li>
+                    <li>Quel est le type de mouvement de la grande roue ?</li>
+                    <li>Quel est le type de mouvement d’une nacelle si elle garde la même orientation ?</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="corrige">
+            <h2>Corrigé indicatif</h2>
+
+            <div class="box">
+                <h3>Correction de l’exercice 1</h3>
+
+                <ol>
+                    <li>référentiel</li>
+                    <li>mouvement</li>
+                    <li>repos</li>
+                    <li>positions</li>
+                    <li>axe</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 2</h3>
+
+                <ol>
+                    <li>Le passager est au repos par rapport au bus.</li>
+                    <li>Le passager est en mouvement par rapport à la route.</li>
+                    <li>On conclut que le mouvement est relatif et dépend du référentiel choisi.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 3</h3>
+
+                <table>
+                    <tr>
+                        <th>Situation</th>
+                        <th>Type de trajectoire</th>
+                    </tr>
+                    <tr>
+                        <td>Voiture sur une route droite</td>
+                        <td>Rectiligne</td>
+                    </tr>
+                    <tr>
+                        <td>Extrémité d’une aiguille d’horloge</td>
+                        <td>Circulaire</td>
+                    </tr>
+                    <tr>
+                        <td>Ballon lancé dans l’air</td>
+                        <td>Curviligne</td>
+                    </tr>
+                    <tr>
+                        <td>Skieur sur une piste courbe</td>
+                        <td>Curviligne</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 4</h3>
+
+                <ol>
+                    <li>Aiguille d’horloge : mouvement de rotation.</li>
+                    <li>Cabine de téléphérique : mouvement de translation.</li>
+                    <li>Roue de vélo : mouvement de rotation.</li>
+                    <li>Tiroir qui glisse : mouvement de translation rectiligne.</li>
+                    <li>Nacelle d’une grande roue : mouvement de translation circulaire.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 5</h3>
+
+                <ol>
+                    <li>Un point situé sur la grande roue décrit une trajectoire circulaire.</li>
+                    <li>La grande roue a un mouvement de rotation autour de son axe.</li>
+                    <li>Une nacelle qui garde la même orientation a un mouvement de translation circulaire.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="navigation">
+            <h2>Navigation</h2>
+
+            <div class="box">
+                <a href="3ac.html" class="btn">Retour aux cours de 3ème année</a>
+                <a href="index.html" class="btn">Retour à l’accueil</a>
+                <a href="3ac-s2-vitesse-moyenne.html" class="btn">Cours suivant</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 - Physique-Chimie Collège | Le mouvement et le repos</p>
+    </footer>
+
+</body>
+</html>
