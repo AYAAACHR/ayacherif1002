@@ -83,7 +83,7 @@
             right: 0;
             top: 58px;
             background-color: white;
-            min-width: 210px;
+            min-width: 230px;
             border-radius: 12px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.18);
             overflow: hidden;
@@ -193,22 +193,19 @@
             padding-left: 10px;
         }
 
-        .intro,
-        .content-box {
+        .intro {
             background-color: white;
             padding: 25px;
             border-radius: 14px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
 
-        .intro p,
-        .content-box p {
+        .intro p {
             margin-bottom: 16px;
             font-size: 18px;
         }
 
-        .intro p:last-child,
-        .content-box p:last-child {
+        .intro p:last-child {
             margin-bottom: 0;
         }
 
@@ -244,6 +241,10 @@
             font-size: 16px;
         }
 
+        .exam-card {
+            border-top: 5px solid #f39c12;
+        }
+
         .btn {
             display: inline-block;
             background-color: #1abc9c;
@@ -252,10 +253,19 @@
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
+            margin-top: 8px;
         }
 
         .btn:hover {
             background-color: #14977d;
+        }
+
+        .btn-secondary {
+            background-color: #0f4c81;
+        }
+
+        .btn-secondary:hover {
+            background-color: #083b66;
         }
 
         footer {
@@ -287,7 +297,7 @@
 
             .menu-links {
                 top: 52px;
-                min-width: 190px;
+                min-width: 210px;
             }
 
             .hero-content h1 {
@@ -319,6 +329,7 @@
             <div class="menu-links" id="menuLinks">
                 <a href="#accueil">Accueil</a>
                 <a href="#cours">Cours</a>
+                <a href="#examens3ac">Examens 3AC</a>
                 <a href="#ressources">Ressources</a>
             </div>
         </div>
@@ -392,6 +403,41 @@
                     </p>
                     <a href="3ac.html" class="btn">Voir les cours</a>
                 </div>
+            </div>
+        </section>
+
+        <section id="examens3ac">
+            <h2>Accès direct aux examens de 3AC</h2>
+
+            <div class="cards">
+
+                <div class="card exam-card">
+                    <h3>Examens locaux 3AC</h3>
+                    <p>
+                        Accéder directement aux examens locaux de physique-chimie pour la troisième année collège,
+                        avec des sujets et des documents PDF pour s’entraîner.
+                    </p>
+                    <a href="3ac-examens-locaux.html" class="btn">Voir les examens locaux</a>
+                </div>
+
+                <div class="card exam-card">
+                    <h3>Examens régionaux 3AC</h3>
+                    <p>
+                        Consulter les examens régionaux de physique-chimie pour préparer l’épreuve finale
+                        et s’habituer au type de questions proposées.
+                    </p>
+                    <a href="3ac-examens-regionaux.html" class="btn">Voir les examens régionaux</a>
+                </div>
+
+                <div class="card exam-card">
+                    <h3>Conseils de révision</h3>
+                    <p>
+                        Découvrir des méthodes simples pour organiser la révision, gérer le temps
+                        et éviter les erreurs fréquentes pendant l’examen.
+                    </p>
+                    <a href="3ac-conseils-examens.html" class="btn btn-secondary">Voir les conseils</a>
+                </div>
+
             </div>
         </section>
 
