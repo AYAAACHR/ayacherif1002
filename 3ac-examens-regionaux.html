@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examens régionaux - 3AC Physique-Chimie</title>
+
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        header.hero {
+            position: relative;
+            color: white;
+            padding: 70px 20px;
+            text-align: center;
+            overflow: hidden;
+            min-height: 430px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                135deg,
+                rgba(15, 76, 129, 0.82),
+                rgba(26, 188, 156, 0.68)
+            );
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .site-logo {
+            width: 95px;
+            height: 95px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            background-color: white;
+            padding: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+        }
+
+        header h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        header p {
+            font-size: 18px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        nav {
+            background-color: #083b66;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #1abc9c;
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            color: #0f4c81;
+            margin: 30px 0 18px;
+            border-left: 5px solid #1abc9c;
+            padding-left: 10px;
+            font-size: 28px;
+        }
+
+        .intro {
+            background-color: white;
+            padding: 24px;
+            border-radius: 14px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .info {
+            background-color: #eef4ff;
+            border-left: 5px solid #0f4c81;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            font-size: 15px;
+        }
+
+        .regionaux-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            margin-top: 25px;
+        }
+
+        .exam-card {
+            background-color: white;
+            padding: 24px;
+            border-radius: 14px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-top: 5px solid #1abc9c;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .exam-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+        }
+
+        .exam-card h3 {
+            color: #0f4c81;
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .exam-card p {
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #eef4ff;
+            color: #0f4c81;
+            padding: 6px 10px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .badge-region {
+            background-color: #e8f6f3;
+            color: #14977d;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 8px 8px 0 0;
+            background-color: #1abc9c;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .btn:hover {
+            background-color: #14977d;
+        }
+
+        .btn-secondary {
+            background-color: #0f4c81;
+        }
+
+        .btn-secondary:hover {
+            background-color: #083b66;
+        }
+
+        .btn-orange {
+            background-color: #f39c12;
+        }
+
+        .btn-orange:hover {
+            background-color: #d68910;
+        }
+
+        footer {
+            background-color: #083b66;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 950px) {
+            .regionaux-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            header.hero {
+                min-height: 360px;
+                padding: 55px 15px;
+            }
+
+            .hero-bg-video {
+                width: auto;
+                height: 100%;
+            }
+
+            header h1 {
+                font-size: 30px;
+            }
+
+            header p {
+                font-size: 15px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 6px;
+                font-size: 14px;
+            }
+
+            .regionaux-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 30px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="hero">
+
+        <video class="hero-bg-video" autoplay muted loop playsinline>
+            <source src="background.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <img src="logo.png" alt="Logo Physique-Chimie Collège" class="site-logo" onerror="this.style.display='none'">
+
+            <h1>Examens régionaux</h1>
+            <p>3ème année collège | Physique-Chimie | Sujets régionaux, PDF et préparation</p>
+        </div>
+
+    </header>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="3ac.html">Cours 3AC</a>
+        <a href="3ac-examens-locaux.html">Examens locaux</a>
+        <a href="3ac-examens-regionaux.html">Examens régionaux</a>
+        <a href="3ac-corriges-examens.html">Corrigés</a>
+        <a href="3ac-conseils-examens.html">Conseils</a>
+    </nav>
+
+    <div class="container">
+
+        <section class="intro">
+            <h2>Liste des examens régionaux</h2>
+
+            <p>
+                Cette page regroupe les examens régionaux de physique-chimie destinés aux élèves
+                de la troisième année collège. Ces sujets permettent de préparer l’épreuve finale,
+                de s’entraîner sur des situations variées et de renforcer la méthode de résolution.
+            </p>
+
+            <div class="info">
+                <strong>Conseil :</strong>
+                travaille chaque examen comme une vraie épreuve : lis bien le sujet, respecte le temps,
+                rédige les étapes de calcul et vérifie les unités avant de consulter le corrigé.
+            </div>
+        </section>
+
+        <section>
+            <h2>Examens disponibles</h2>
+
+            <div class="regionaux-grid">
+
+                <div class="exam-card">
+                    <span class="badge badge-region">Examen régional</span>
+
+                    <h3>Examen régional n°1</h3>
+
+                    <p>
+                        Sujet régional de physique-chimie pour la 3ème année collège,
+                        région <strong>Béni Mellal-Khénifra</strong>. Ce document aide
+                        à préparer l’épreuve finale à travers un sujet complet.
+                    </p>
+
+                    <a href="3ac-examen-regional-1-beni-mellal-khenifra.html" class="btn">Voir l’examen</a>
+                    <a href="3ac-examen-regional-1-beni-mellal-khenifra.pdf" target="_blank" class="btn btn-secondary">Ouvrir le PDF</a>
+                    <a href="3ac-examen-regional-1-beni-mellal-khenifra.pdf" download class="btn btn-orange">Télécharger</a>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <h2>Navigation</h2>
+
+            <div class="intro">
+                <a href="3ac.html" class="btn">Retour aux cours 3AC</a>
+                <a href="index.html" class="btn">Retour à l’accueil</a>
+                <a href="3ac-examens-locaux.html" class="btn btn-secondary">Examens locaux</a>
+                <a href="3ac-corriges-examens.html" class="btn btn-secondary">Corrigés</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 - Physique-Chimie Collège | Examens régionaux 3AC</p>
+    </footer>
+
+</body>
+</html>
